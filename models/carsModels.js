@@ -14,10 +14,8 @@ module.exports = function (sequelize, DataTypes) {
         }
       },
       year: {
-        type: DataTypes.INTEGER, allowNull: false, validate: {// notNull: true,
-          // notEmpty: true,
-          len: [1, 200]
-        }
+        type: DataTypes.INTEGER, allowNull: true
+        
     },
       mileage: {
         type: DataTypes.INTEGER, allowNull: false, validate: {// notNull: true,
@@ -30,6 +28,9 @@ module.exports = function (sequelize, DataTypes) {
           // notEmpty: true,
           len: [1, 200]
         }
+      },
+      image: {
+        type: DataTypes.TEXT, allowNull: true
       },
       hidden: { 
           type: DataTypes.BOOLEAN, defaultValue: false }
