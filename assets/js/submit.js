@@ -1,37 +1,43 @@
-// // when appropriate button is clicked, class of button will change for devoured, updates html when end of function is reached
-// $(function() {
-//     $(".change-devoured").on("click", function(event) {
-//       var id = $(this).data("id");
-//       var newEat = $(this).data("neweat");
+$(document).ready(function(){
+    var cars = [];
+    
+    var $newCarInput = $("#input-new-car");
 
-//       var newEatState = {
-//         devoured: newEat
-//       };
-//       $.ajax("/api/burgers/" + id, {
-//         type: "PUT",
-//         data: newEatState
-//       }).then(
-//         function() {
-//           console.log("changed devoured to", newEat);
-//           location.reload();
-//         }
-//       );
-//     });
-// allows user to create new burger, adds to database and reloads html when end of function is reached 
-$(".create-form").on("submit", function (event) {
-    event.preventDefault();
+    var $newCarContainer = $("#car-container")
 
-    var newCarInterest = {
-        car_name: $("#car-name").val().trim(),
-    };
-    $.ajax("/api/cars", {
-        type: "POST",
-        data: newCarInterest
-    }).then(
-        function () {
-            console.log("Added car to user's favorites");
-            location.reload();
-        }
-    );
+    $("#update-cars").on("click", function(){
+        updateCars()
+    });
+
+    $("#insert-cars").on("click", function(){
+        insertCars()
+    })
+
+    getCars();
+
+    function getCars() {
+        $.get("/api/cars", function(data) {
+          cars = data;
+          initializeRows();
+        });
+      };
+    
+    function updateCars(cars) {
+        $.ajax({
+          method: "PUT",
+          url: "/api/cars",
+          data: cars
+        }).then(getTodos);
+      };
+
+      function insertCars(event) {
+        event.preventDefault();
+        var cars = {
+          text: $newCarInput.val().trim(),
+          complete: false
+        };
+        $.post("/api/cars", cars, getCars);
+        $newItemInput.val("");
+      };
+
 });
-//   });
