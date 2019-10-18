@@ -15,7 +15,8 @@ CREATE TABLE car (
   make VARCHAR(255) NOT NULL,
   year INT NOT NULL,
   mileage INT NOT NULL,
-  type VARCHAR(255) NOT NULL
+  type VARCHAR(255) NOT NULL,
+  image VARCHAR(255),
   hidden BOOLEAN DEFAULT FALSE,
   PRIMARY KEY (id)
 );
