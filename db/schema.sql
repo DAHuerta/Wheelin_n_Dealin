@@ -16,15 +16,16 @@ CREATE TABLE car (
   year INT NOT NULL,
   mileage INT NOT NULL,
   type VARCHAR(255) NOT NULL
+  hidden BOOLEAN DEFAULT FALSE,
   PRIMARY KEY (id)
 );
 
 CREATE TABLE user (
     id int NOT NULL AUTO_INCREMENT,
-    authorized BOOLEAN DEFAULT FAlSE,
     user_name VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
     favorite_color VARCHAR(255), 
     favorite_type VARCHAR(255),
-    favorite_make VARCHAR(255)
+    favorite_make VARCHAR(255),
+    authorized BOOLEAN DEFAULT FAlSE
 )
