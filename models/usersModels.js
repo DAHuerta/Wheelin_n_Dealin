@@ -1,39 +1,39 @@
 
 module.exports = function (sequelize, DataTypes) {
-    var Cars = sequelize.define("Cars", {
-      model: {
+    var Users = sequelize.define("Users", {
+      user_name: {
         type: DataTypes.STRING, allowNull: false, validate: {// notNull: true,
           // notEmpty: true,
           len: [1, 200]
         }
       },
-      make: {
+      password: {
         type: DataTypes.STRING, allowNull: false, validate: {// notNull: true,
           // notEmpty: true,
           len: [1, 200]
         }
       },
-      year: {
-        type: DataTypes.INTEGER, allowNull: false, validate: {// notNull: true,
-          // notEmpty: true,
-          len: [1, 200]
-        }
-    },
-      mileage: {
-        type: DataTypes.INTEGER, allowNull: false, validate: {// notNull: true,
-          // notEmpty: true,
-          len: [1, 200]
-        }
-    },
-      type: {
+      favorite_color: {
         type: DataTypes.STRING, allowNull: false, validate: {// notNull: true,
           // notEmpty: true,
           len: [1, 200]
         }
       },
-      hidden: { 
+      favorite_type: {
+        type: DataTypes.STRING, allowNull: false, validate: {// notNull: true,
+          // notEmpty: true,
+          len: [1, 200]
+        }
+      },
+      favorite_make: {
+        type: DataTypes.STRING, allowNull: false, validate: {// notNull: true,
+          // notEmpty: true,
+          len: [1, 200]
+        }
+      },
+      authorized: { 
           type: DataTypes.BOOLEAN, defaultValue: false }
     });
-    return Cars;
+    return Users;
 };
   
