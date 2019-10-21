@@ -33,6 +33,8 @@ module.exports = function (sequelize, DataTypes) {
     hidden: {
       type: DataTypes.BOOLEAN, defaultValue: false
     }
+  }, {
+    timestamps: false
   });
   return Cars;
 };
