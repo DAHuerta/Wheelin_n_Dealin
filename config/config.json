@@ -1,11 +1,11 @@
 {
   "development": {
     "username": "root",
-    "password": "Quattro_Quattro08",
+    "password": "ngcduy123",
     "database": "car_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
-    // "operatorsAliases": false
+
   },
   "test": {
     "username": "root",
