@@ -5,7 +5,6 @@ CREATE DATABASE car_db;
 
 USE car_db;
 
-
 CREATE TABLE car (
   id INT NOT NULL AUTO_INCREMENT,
   model VARCHAR(255) NOT NULL,
@@ -28,4 +27,4 @@ CREATE TABLE user (
     favorite_type VARCHAR(255),
     favorite_make VARCHAR(255),
     authorized BOOLEAN DEFAULT FAlSE
-)
+);
