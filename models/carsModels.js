@@ -1,13 +1,15 @@
-module.exports = function(sequelize, DataTypes) {
-  var Cars = sequelize.define("Cars", {
-    model: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        // notNull: true,
-        // notEmpty: true,
-        len: [1, 200]
-      }
+
+
+module.exports = function (sequelize, DataTypes) {
+    var Cars = sequelize.define("Cars", {
+      model: {
+        type: DataTypes.STRING, allowNull: false, validate: {// notNull: true,
+          // notEmpty: true,
+          len: [1, 200]
+        }
+      },
+      year: {
+        type: DataTypes.INTEGER, allowNull: true  
     },
     make: {
       type: DataTypes.STRING,
@@ -18,37 +20,17 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 200]
       }
     },
-    year: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        // notNull: true,
-        // notEmpty: true,
-        len: [1, 200]
-      }
-    },
-    mileage: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        // notNull: true,
-        // notEmpty: true,
-        len: [1, 200]
-      }
-    },
-    type: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        // notNull: true,
-        // notEmpty: true,
-        len: [1, 200]
-      }
-    },
-    hidden: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false
-    }
-  });
-  return Cars;
+      type: {
+        type: DataTypes.STRING, allowNull: false, validate: {// notNull: true,
+          // notEmpty: true,
+          len: [1, 200]
+        }
+      },
+      image: {
+        type: DataTypes.TEXT, allowNull: true
+      },
+      hidden: { 
+          type: DataTypes.BOOLEAN, defaultValue: false }
+    });
+    return Cars;
 };
