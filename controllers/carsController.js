@@ -11,6 +11,15 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the cars
+
+  app.get("/", function(req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Car.findAll({}).then(function(dbCars) {
+      // We have access to the cars as an argument inside of the callback function
+      res.json(dbCars);
+    });
+  });
+  
   app.get("/api/cars", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.Car.findAll({}).then(function(dbCars) {
