@@ -1,4 +1,5 @@
 
+
 module.exports = function (sequelize, DataTypes) {
     var Cars = sequelize.define("Cars", {
       model: {
@@ -7,21 +8,17 @@ module.exports = function (sequelize, DataTypes) {
           len: [1, 200]
         }
       },
-      make: {
-        type: DataTypes.STRING, allowNull: false, validate: {// notNull: true,
-          // notEmpty: true,
-          len: [1, 200]
-        }
-      },
       year: {
-        type: DataTypes.INTEGER, allowNull: true
-        
+        type: DataTypes.INTEGER, allowNull: true  
     },
-      mileage: {
-        type: DataTypes.INTEGER, allowNull: false, validate: {// notNull: true,
-          // notEmpty: true,
-          len: [1, 200]
-        }
+    make: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        // notNull: true,
+        // notEmpty: true,
+        len: [1, 200]
+      }
     },
       type: {
         type: DataTypes.STRING, allowNull: false, validate: {// notNull: true,
@@ -37,4 +34,3 @@ module.exports = function (sequelize, DataTypes) {
     });
     return Cars;
 };
-  
