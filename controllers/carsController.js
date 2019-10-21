@@ -23,15 +23,42 @@ module.exports = function (app) {
     });
   });
 
-  // GET route for getting all of the cars
-  // app.get("/", function (req, res) {
-  //   // findAll returns all entries for a table when used with no options
-  //   db.Cars.findAll({}).then(function (dbCars) {
-  //     // We have access to the cars as an argument inside of the callback function
-  //     console.log(dbCars)
-  //     res.json(dbCars);
-  //   });
-  // });
+  app.get("/inventory", function (req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Cars.findAll({}).then(function (data) {
+      // We have access to the cars as an argument inside of the callback function
+      var dbCars = {
+        cars: dbCars
+      }
+      console.log(dbCars)
+      res.render("inventory", dbCars);
+    });
+  });
+
+  app.get("/login", function (req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Cars.findAll({}).then(function (data) {
+      // We have access to the cars as an argument inside of the callback function
+      var dbCars = {
+        cars: dbCars
+      }
+      console.log(dbCars)
+      res.render("login", dbCars);
+    });
+  });
+
+  app.get("/signup", function (req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Cars.findAll({}).then(function (data) {
+      // We have access to the cars as an argument inside of the callback function
+      var dbCars = {
+        cars: dbCars
+      }
+      console.log(dbCars)
+      res.render("signup", dbCars);
+    });
+  });
+
 
   // POST route for saving a new todo
   app.post("/api/cars", function (req, res) {
