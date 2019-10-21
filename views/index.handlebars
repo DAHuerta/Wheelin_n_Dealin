@@ -1,0 +1,25 @@
+<div class="body">
+    <p>Holding Place for welcome information</p>
+</div>
+
+<div class="body-images">
+    <p>Holding Place for intial cars that will be rendered on page</p>
+    <ul>
+
+    {{#each dbCars}}
+    <li>
+    <p>id: {{this.id}}</p>
+    model: req.body.model,
+    make: req.body.make,
+    year: req.body.year,
+    mileage: req.body.mileage,
+    type: req.body.type,
+    hidden: req.body.hidden
+    </li>
+    </ul>
+    {{/each}}
+</div>
+
+<div class="body-deals">
+    <p>Holding Place for deal of the day lottery that is going to be displayed</p>
+</div>
