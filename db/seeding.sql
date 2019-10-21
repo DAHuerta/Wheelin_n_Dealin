@@ -1,72 +1,71 @@
-("Silverado", "Chevy", 2019, 2,366, "Truck", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"
-);
-("Silverado", "Chevy", 2010, 55,422, "Truck", "Gray", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Silverado", "Chevy", 2009, 62,743, "Truck", "Green", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Silverado", "Chevy", 2000, 113,763, "Truck", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Escalade", "Cadillac", 2000, 79,677, "SUV", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Escalade", "Cadillac", 2019, 6,478, "SUV", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Escalade", "Cadillac", 1997, 134,687, "SUV", "Yellow", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("CTS", "Cadillac", 2019, 3,811, "Compact Car", "Red", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("CTS", "Cadillac", 2014, 47,821, "Compact Car", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("CTS", "Cadillac", 2010, 59,007, "Compact Car", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("XTS", "Cadillac", 2018, 19,755, "Compact Car", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("XTS", "Cadillac", 2011, 45,967, "Compact Car", "Gray", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Pilot", "Honda", 2006, 156,667, "SUV", "Gray", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Pilot", "Honda", 2019, 4,945, "SUV", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Pilot", "Honda", 2016, 40,345, "SUV", "Red", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Pilot", "Honda", 2004, 134,233, "SUV", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Accord", "Honda", 2019, 9,553, "Compact Car", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Accord", "Honda", 2017, 23,485, "Compact Car", "Green", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Accord", "Honda", 2015, 39,775, "Compact Car", "Yellow", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Accord", "Honda", 1998, 174,907, "Compact Car", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Ridgeline", "Honda", 2010, 67,059, "Truck", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Ridgeline", "Honda", 2012, 57,384, "Truck", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("S2000", "Honda", 2009, 32,660, "Compact Car", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Civic", "Honda", 1996, 191,700, "Compact Car", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Civic", "Honda", 2000, 95,888, "Compact Car", "Red", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Civic", "Honda", 2004, 109,555, "Compact Car", "Green", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("CR-V", "Honda", 2019, 10,115, "SUV", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("CR-V", "Honda", 2009, 78,552, "SUV", "Gray", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Passport", "Honda", 2010, 83,526, "Van", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Passport", "Honda", 2015, 39,777, "Van", "Green", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Passport", "Honda", 2019, 4,322, "Van", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Camry", "Toyota", 2000, 141,500, "Compact Car", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Camry", "Toyota", 2008, 81,133, "Compact Car", "Gray", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Camry", "Toyota", 2016, 31,009, "Compact Car", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Camry", "Toyota", 2007, 96,000, "Compact Car", "Red", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Prius", "Toyota", 2012, 66,609, "Compact Car", "Red", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Prius", "Toyota", 2019, 2,390, "Compact Car", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Prius", "Toyota", 2014, 57,044, "Compact Car", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Corolla", "Toyota", 1992, 180,882, "Compact Car", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Corolla", "Toyota", 2018, 13,445, "Compact Car", "Red", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Corolla", "Toyota", 2010, 73,777, "Compact Car", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Tacoma", "Toyota", 2010, 65,999, "Truck", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Tacoma", "Toyota", 2019, 4,514, "Truck", "Green", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Tacoma", "Toyota", 2014, 50,971, "Truck", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Tacoma", "Toyota", 2006, 112,555, "Truck", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("4 Runner", "Toyota", 2019, 4,223, "SUV", "Yellow", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("4 Runner", "Toyota", 2004, 130,223, "SUV", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("4 Runner", "Toyota", 1990, 185,119, "SUV", "Gray", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("4 Runner", "Toyota", 2015, 34,665, "SUV", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Tundra", "Toyota", 2014, 58,671, "Truck", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Tundra", "Toyota", 2006, 121,009, "Truck", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("TT", "Audi", 2019, 2,120, "Compact Car", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("TT", "Audi", 2005, 68,112, "Compact Car", "Gray", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("A4", "Audi", 2000, 99,167, "Compact Car", "Red", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("A4", "Audi", 2019, 4,809, "Compact Car", "Green", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("A4", "Audi", 2010, 80,992, "Compact Car", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("A3", "Audi", 2019, 1,233, "Compact Car", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("A3", "Audi", 2015, 40,223, "Compact Car", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("A6", "Audi", 2015, 45,920, "Compact Car", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("A6", "Audi", 2019, 6,523, "Compact Car", "Green", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("A6", "Audi", 2010, 72,911, "Compact Car", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("S5", "Audi", 2016, 30,117, "Compact Car", "Yellow", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Rengade", "Jeep", 2019, 3,212, "SUV", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Rengade", "Jeep", 2017, 23,077, "SUV", "Yellow", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Rengade", "Jeep", 2014, 60,229, "SUV", "Red", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Wrangler", "Jeep", 1998, 131,923, "SUV", "Red", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Wrangler", "Jeep", 2019, 3,402, "SUV", "Yellow", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Wrangler", "Jeep", 2010, 50,223, "SUV", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Wrangler", "Jeep", 2007, 75,729, "SUV", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Cherokee", "Jeep", 2000, 123,119, "SUV", "Gray", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg");
-("Cherokee", "Jeep", 2001, 103,833, "SUV", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"); 
+("Silverado", "Chevy", 2019, 2,366, "Truck", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Silverado", "Chevy", 2010, 55,422, "Truck", "Gray", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Silverado", "Chevy", 2009, 62,743, "Truck", "Green", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Silverado", "Chevy", 2000, 113,763, "Truck", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Escalade", "Cadillac", 2000, 79,677, "SUV", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Escalade", "Cadillac", 2019, 6,478, "SUV", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Escalade", "Cadillac", 1997, 134,687, "SUV", "Yellow", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("CTS", "Cadillac", 2019, 3,811, "Compact Car", "Red", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("CTS", "Cadillac", 2014, 47,821, "Compact Car", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("CTS", "Cadillac", 2010, 59,007, "Compact Car", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("XTS", "Cadillac", 2018, 19,755, "Compact Car", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("XTS", "Cadillac", 2011, 45,967, "Compact Car", "Gray", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Pilot", "Honda", 2006, 156,667, "SUV", "Gray", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Pilot", "Honda", 2019, 4,945, "SUV", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Pilot", "Honda", 2016, 40,345, "SUV", "Red", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Pilot", "Honda", 2004, 134,233, "SUV", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Accord", "Honda", 2019, 9,553, "Compact Car", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Accord", "Honda", 2017, 23,485, "Compact Car", "Green", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Accord", "Honda", 2015, 39,775, "Compact Car", "Yellow", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Accord", "Honda", 1998, 174,907, "Compact Car", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Ridgeline", "Honda", 2010, 67,059, "Truck", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Ridgeline", "Honda", 2012, 57,384, "Truck", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("S2000", "Honda", 2009, 32,660, "Compact Car", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Civic", "Honda", 1996, 191,700, "Compact Car", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Civic", "Honda", 2000, 95,888, "Compact Car", "Red", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Civic", "Honda", 2004, 109,555, "Compact Car", "Green", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("CR-V", "Honda", 2019, 10,115, "SUV", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("CR-V", "Honda", 2009, 78,552, "SUV", "Gray", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Passport", "Honda", 2010, 83,526, "Van", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Passport", "Honda", 2015, 39,777, "Van", "Green", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Passport", "Honda", 2019, 4,322, "Van", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Camry", "Toyota", 2000, 141,500, "Compact Car", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Camry", "Toyota", 2008, 81,133, "Compact Car", "Gray", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Camry", "Toyota", 2016, 31,009, "Compact Car", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Camry", "Toyota", 2007, 96,000, "Compact Car", "Red", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Prius", "Toyota", 2012, 66,609, "Compact Car", "Red", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Prius", "Toyota", 2019, 2,390, "Compact Car", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Prius", "Toyota", 2014, 57,044, "Compact Car", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Corolla", "Toyota", 1992, 180,882, "Compact Car", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Corolla", "Toyota", 2018, 13,445, "Compact Car", "Red", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Corolla", "Toyota", 2010, 73,777, "Compact Car", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Tacoma", "Toyota", 2010, 65,999, "Truck", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Tacoma", "Toyota", 2019, 4,514, "Truck", "Green", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Tacoma", "Toyota", 2014, 50,971, "Truck", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Tacoma", "Toyota", 2006, 112,555, "Truck", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("4 Runner", "Toyota", 2019, 4,223, "SUV", "Yellow", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("4 Runner", "Toyota", 2004, 130,223, "SUV", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("4 Runner", "Toyota", 1990, 185,119, "SUV", "Gray", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("4 Runner", "Toyota", 2015, 34,665, "SUV", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Tundra", "Toyota", 2014, 58,671, "Truck", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Tundra", "Toyota", 2006, 121,009, "Truck", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("TT", "Audi", 2019, 2,120, "Compact Car", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("TT", "Audi", 2005, 68,112, "Compact Car", "Gray", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("A4", "Audi", 2000, 99,167, "Compact Car", "Red", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("A4", "Audi", 2019, 4,809, "Compact Car", "Green", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("A4", "Audi", 2010, 80,992, "Compact Car", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("A3", "Audi", 2019, 1,233, "Compact Car", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("A3", "Audi", 2015, 40,223, "Compact Car", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("A6", "Audi", 2015, 45,920, "Compact Car", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("A6", "Audi", 2019, 6,523, "Compact Car", "Green", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("A6", "Audi", 2010, 72,911, "Compact Car", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("S5", "Audi", 2016, 30,117, "Compact Car", "Yellow", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Rengade", "Jeep", 2019, 3,212, "SUV", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Rengade", "Jeep", 2017, 23,077, "SUV", "Yellow", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Rengade", "Jeep", 2014, 60,229, "SUV", "Red", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Wrangler", "Jeep", 1998, 131,923, "SUV", "Red", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Wrangler", "Jeep", 2019, 3,402, "SUV", "Yellow", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Wrangler", "Jeep", 2010, 50,223, "SUV", "Blue", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Wrangler", "Jeep", 2007, 75,729, "SUV", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Cherokee", "Jeep", 2000, 123,119, "SUV", "Gray", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
+("Cherokee", "Jeep", 2001, 103,833, "SUV", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"), 
