@@ -1,11 +1,10 @@
-
 DROP DATABASE IF EXISTS car_db;
 
 CREATE DATABASE car_db;
 
 USE car_db;
 
-CREATE TABLE car (
+CREATE TABLE cars (
   id INT NOT NULL AUTO_INCREMENT,
   model VARCHAR(255) NOT NULL,
   make VARCHAR(255) NOT NULL,
@@ -26,5 +25,6 @@ CREATE TABLE user (
     favorite_color VARCHAR(255), 
     favorite_type VARCHAR(255),
     favorite_make VARCHAR(255),
-    authorized BOOLEAN DEFAULT FAlSE
+    authorized BOOLEAN DEFAULT FAlSE,
+    PRIMARY KEY (id)
 );
