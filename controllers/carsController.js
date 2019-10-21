@@ -13,7 +13,7 @@ module.exports = function(app) {
   // GET route for getting all of the cars
   app.get("/api/cars", function(req, res) {
     // findAll returns all entries for a table when used with no options
-    db.Cars.findAll({}).then(function(dbCars) {
+    db.Car.findAll({}).then(function(dbCars) {
       // We have access to the cars as an argument inside of the callback function
       res.json(dbCars);
     });
@@ -24,7 +24,7 @@ module.exports = function(app) {
     // create takes an argument of an object describing the item we want to insert
     // into our table. In this case we just we pass in an object with a text and
     // complete property
-    db.Cars.create({
+    db.Car.create({
       model: req.body.model,
       make: req.body.make,
       year: req.body.year,
@@ -45,7 +45,7 @@ module.exports = function(app) {
   // from req.params.id
   app.delete("/api/cars/:id", function(req, res) {
     // Destroy takes in one argument: a "where object describing the cars we want to destroy
-    db.Cars.destroy({
+    db.Car.destroy({
       where: {
         id: req.params.id
       }
@@ -59,7 +59,7 @@ module.exports = function(app) {
   app.put("/api/cars/update/:id", function(req, res) {
     // Update takes in two arguments, an object describing the properties we want to update,
     // and another "where" object describing the cars we want to update
-    db.Cars.update({
+    db.Car.update({
       model: req.body.model,
       make: req.body.make,
       year: req.body.year,

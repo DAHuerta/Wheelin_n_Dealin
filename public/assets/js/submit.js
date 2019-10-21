@@ -1,43 +1,44 @@
-$(document).ready(function(){
-    var cars = [];
-    
-    var $newCarInput = $("#input-new-car");
+$(document).ready(function () {
+  var cars = [];
 
-    var $newCarContainer = $("#car-container")
+  var $newCarInput = $("#input-new-car");
 
-    $("#update-cars").on("click", function(){
-        updateCars()
-    });
+  var $newCarContainer = $("#car-container")
 
-    $("#insert-cars").on("click", function(){
-        insertCars()
-    })
+  $("#update-cars").on("click", function () {
+    updateCars()
+  });
 
-    getCars();
-
-    function getCars() {
-        $.get("/api/cars", function(data) {
-          cars = data;
-          initializeRows();
-        });
-      };
-    
-    function updateCars(cars) {
-        $.ajax({
-          method: "PUT",
-          url: "/api/cars",
-          data: cars
-        }).then(getTodos);
-      };
-
-      function insertCars(event) {
-        event.preventDefault();
-        var cars = {
-          text: $newCarInput.val().trim(),
-          complete: false
-        };
-        $.post("/api/cars", cars, getCars);
-        $newItemInput.val("");
-      };
+  $("#insert-cars").on("click", function () {
+    insertCars()
+  })
 
 });
+
+getCars();
+console.log("hi")
+
+function getCars() {
+  $.get("/api/cars", function (data) {
+    cars = data;
+    initializeRows();
+  });
+};
+
+function updateCars(cars) {
+  $.ajax({
+    method: "PUT",
+    url: "/api/cars",
+    data: cars
+  }).then(getTodos);
+};
+
+function insertCars(event) {
+  event.preventDefault();
+  var cars = {
+    text: $newCarInput.val().trim(),
+    complete: false
+  };
+  $.post("/api/cars", cars, getCars);
+  $newItemInput.val("");
+};
