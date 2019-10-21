@@ -1,4 +1,4 @@
-INSERT INTO car
+INSERT INTO car 
 VAlUES
 ("Mustang", "Ford", 2019, 1, 600, "Compact Car", "Yellow", 26, 395, "https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_large/v1/editorial/2019-Ford-Mustang-GT-Coupe-Yellow-Peter-Anderson-1200x800p-1.jpg");
 ("Mustang", "Ford", 2015, 18,006, "Compact Car", "Black", 17,300, "https://i.ytimg.com/vi/uC-l93QfGg0/maxresdefault.jpg");
