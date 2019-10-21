@@ -17,8 +17,7 @@ module.exports = function (app) {
       var dbCars = {
         cars: dbCars
       }
-      console.log("/ route is below", dbCars)
-
+      // console.log("/ route is below", dbCars)
       res.render("index", dbCars);
     });
   });
@@ -27,11 +26,15 @@ module.exports = function (app) {
     // findAll returns all entries for a table when used with no options
     db.Cars.findAll({}).then(function (data) {
       // We have access to the cars as an argument inside of the callback function
-      var dbCars = {
-        cars: data[0]
+      // console.log(data);
+      // console.log(data[0]);
+      console.log(data[0].model);
+      var moreCars = {
+        cars: data[0].model
       }
-      console.log("car data below", dbCars)
-      res.render("inventory", dbCars);
+      // console.log("car data below", moreCars)
+      // console.log("car data below", moreCars.cars)
+      res.render("inventory", moreCars);
     });
   });
 

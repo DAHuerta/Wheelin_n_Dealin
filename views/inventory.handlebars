@@ -2,20 +2,22 @@
     <p>Holding Place for welcome information</p>
     <div>Holding Place for intial cars that will be rendered on page
 
-        {{dbCars.model}}
-        {{!-- <ul>
-            {{#each dbCars}}
+        {{moreCars}}
+        <ul>
+            {{#each moreCars}}
             <li>
-                id: {{this.id}}
-                model: req.body.model {{this.model}}
-                make: req.body.make {{this.make}}
+                {{this.model}}
+                {{!-- id: {{this.id}} --}}
+                {{!-- model: req.body.model {{this.model}} --}}
+                {{!-- make: req.body.make {{this.make}}
                 year: req.body.year {{this.year}}
                 mileage: req.body.mileage {{this.mileage}}
                 type: req.body.type {{this.type}}
                 hidden: req.body.hidden {{this.hidden}}
+                {{this.cars}} --}}
             </li>
             {{/each}}
-        </ul> --}}
+        </ul>
     </div>
 </div>
 
