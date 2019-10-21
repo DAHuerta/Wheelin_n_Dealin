@@ -23,12 +23,7 @@ app.set("view engine", "handlebars");
 require("./controllers/carsController")(app);
 require("./controllers/usersController")(app);
 
-// app.use(routesCars);
-// app.use(routesUsers);
-
-// Start our server so that it can begin listening to client requests.
-
-db.sequelize.sync({}).then(function() {
+db.sequelize.sync({force: true}).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });

@@ -1,25 +1,17 @@
 module.exports = function (sequelize, DataTypes) {
-  var Car = sequelize.define("Car", {
+  var Cars = sequelize.define("Cars", {
     model: {
-      type: DataTypes.STRING, allowNull: false, validate: {// notNull: true,
-        // notEmpty: true,
-        len: [1, 200]
-      }
+      type: DataTypes.STRING, allowNull: false
     },
     make: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        // notNull: true,
-        // notEmpty: true,
-        len: [1, 200]
-      }
+      allowNull: false
     },
     year: {
       type: DataTypes.INTEGER, allowNull: true
     },
     mileage: {
-      type: DataTypes.INTEGER, allowNull: true
+      type: DataTypes.INTEGER, allowNull: false
     },
     type: {
       type: DataTypes.STRING, allowNull: false, validate: {// notNull: true,
@@ -28,10 +20,10 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
     color: {
-      type: DataTypes.STRING, allowNull: true
+      type: DataTypes.STRING, allowNull: false
     },
     price: {
-      type: DataTypes.INTEGER, allowNull: true
+      type: DataTypes.STRING, allowNull: false
     },
     image: {
       type: DataTypes.TEXT, allowNull: true
@@ -39,9 +31,9 @@ module.exports = function (sequelize, DataTypes) {
     hidden: {
       type: DataTypes.BOOLEAN, defaultValue: false
     }
-  }
-    , {
-      timestamps: false
-    });
-  return Car;
+  },
+  {
+    timestampes: false
+  });
+  return Cars;
 };

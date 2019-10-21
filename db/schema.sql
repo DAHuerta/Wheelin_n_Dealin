@@ -26,4 +26,4 @@ CREATE TABLE user (
     favorite_type VARCHAR(255),
     favorite_make VARCHAR(255),
     authorized BOOLEAN DEFAULT FAlSE
-)
+);
