@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 5e2efe12cf1553911fe85e39d0e82e5d18761cb5
 INSERT INTO cars (model, make, year, mileage, type, color, price, image)
 VAlUES
 ("Mustang", "Ford", 2019, 1600, "Compact Car", "Yellow", 26395, "https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_large/v1/editorial/2019-Ford-Mustang-GT-Coupe-Yellow-Peter-Anderson-1200x800p-1.jpg"),
