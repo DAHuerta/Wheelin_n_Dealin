@@ -1,13 +1,9 @@
 
 DROP DATABASE IF EXISTS car_db;
-DROP DATABASE IF EXISTS user_db;
 
 CREATE DATABASE car_db;
-CREATE DATABASE user_db;
 
 USE car_db;
-USE user_db;
-
 
 CREATE TABLE car (
   id INT NOT NULL AUTO_INCREMENT,
@@ -31,4 +27,4 @@ CREATE TABLE user (
     favorite_type VARCHAR(255),
     favorite_make VARCHAR(255),
     authorized BOOLEAN DEFAULT FAlSE
-)
+);
