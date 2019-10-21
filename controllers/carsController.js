@@ -7,6 +7,8 @@
 // Requiring our models
 var db = require("../models");
 
+
+
 // Routes =============================================================
 module.exports = function(app) {
 
@@ -15,12 +17,12 @@ module.exports = function(app) {
     // findAll returns all entries for a table when used with no options
     db.Cars.findAll({}).then(function(dbCars) {
       // We have access to the cars as an argument inside of the callback function
-      var dbCars = {
+      var carObj = {
         cars: dbCars
       }
-      console.log(dbCars)
-      // res.json(dbCars)
-      res.render("index", dbCars);
+      console.log(carObj)
+      // res.json(carObj)
+      res.render("index", carObj);
     });
   });
 
@@ -35,6 +37,9 @@ module.exports = function(app) {
       year: req.body.year,
       mileage: req.body.mileage,
       type: req.body.type,
+      color: req.body.color,
+      price: req.body.price,
+      image: req.body.image,
       hidden: req.body.hidden
     }).then(function(dbCars) {
       // We have access to the new todo as an argument inside of the callback function
@@ -70,6 +75,9 @@ module.exports = function(app) {
       year: req.body.year,
       mileage: req.body.mileage,
       type: req.body.type,
+      color: req.body.color,
+      price: req.body.price,
+      image: req.body.image,
       hidden: req.body.hidden
     }, {
       where: {

@@ -13,14 +13,14 @@ $(document).ready(function(){
         insertCars()
     })
 
-    getCars();
+    // getCars();
 
-    function getCars() {
-        $.get("/", function(data) {
-          cars = data;
-          // initializeRows();
-          console.log(cars)
-      })}
+    // function getCars() {
+    //     $.get("/cars", function(data) {
+
+    //       // initializeRows();
+    //       console.log(data)
+    //   })}
     
     function updateCars(cars) {
         $.ajax({
