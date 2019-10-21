@@ -14,10 +14,12 @@ module.exports = function (app) {
     // findAll returns all entries for a table when used with no options
     db.Cars.findAll({}).then(function (data) {
       // We have access to the cars as an argument inside of the callback function
-      var carOb {
-        cars: data
+      var dbCars = {
+        cars: dbCars
       }
-      res.render("index", carOb)
+      console.log(dbCars)
+
+      res.render("index", dbCars);
     });
   });
 

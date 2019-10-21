@@ -19,7 +19,7 @@ $(document).ready(function(){
         $.get("/", function(data) {
           cars = data;
           // initializeRows();
-          console.log(cars)
+          // console.log(cars)
       })}
     
     function updateCars(cars) {
