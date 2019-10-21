@@ -16,11 +16,11 @@ $(document).ready(function(){
     getCars();
 
     function getCars() {
-        $.get("/api/cars", function(data) {
+        $.get("/", function(data) {
           cars = data;
-          initializeRows();
-        });
-      };
+          // initializeRows();
+          console.log(cars)
+      })}
     
     function updateCars(cars) {
         $.ajax({
