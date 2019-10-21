@@ -1,4 +1,35 @@
-INSERT INTO car (model, make, year, mileage, type, color, price, image)
+DROP DATABASE IF EXISTS car_db;
+
+CREATE DATABASE car_db;
+
+USE car_db;
+
+CREATE TABLE cars (
+  id INT NOT NULL AUTO_INCREMENT,
+  model VARCHAR(255) NOT NULL,
+  make VARCHAR(255) NOT NULL,
+  year INT NOT NULL,
+  mileage INT NOT NULL,
+  type VARCHAR(255) NOT NULL,
+  color VARCHAR(255) NOT NULL,
+  price INT NOT NULL,
+  image VARCHAR(500) NOT NULL,
+  hidden BOOLEAN DEFAULT FALSE,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE user (
+    id int NOT NULL AUTO_INCREMENT,
+    user_name VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    favorite_color VARCHAR(255), 
+    favorite_type VARCHAR(255),
+    favorite_make VARCHAR(255),
+    authorized BOOLEAN DEFAULT FAlSE,
+    PRIMARY KEY (id)
+);
+
+INSERT INTO cars (model, make, year, mileage, type, color, price, image)
 VAlUES
 ("Mustang", "Ford", 2019, 1600, "Compact Car", "Yellow", 26395, "https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_large/v1/editorial/2019-Ford-Mustang-GT-Coupe-Yellow-Peter-Anderson-1200x800p-1.jpg"),
 ("Mustang", "Ford", 2015, 18006, "Compact Car", "Black", 17300, "https://i.ytimg.com/vi/uC-l93QfGg0/maxresdefault.jpg"),
@@ -18,7 +49,7 @@ VAlUES
 ("F-250", "Ford", 2010, 96809, "Truck", "Yellow", 27000, "https://images.carstory.com/7560584486356813912/4/t/324x-"),
 ("F-250", "Ford", 2019, 4201, "Truck", "Green", 33150, "https://www.greenford.com/assets/stock/expanded/white/640/2019fot12_640/2019fot120003_640_01.jpg?height=400"),
 ("Focus", "Ford", 2000, 123889, "Compact Car", "Green", 4000, "https://s.aolcdn.com/commerce/autodata/images/USB00FOC121A0101.jpg"),
-("Focus", "Ford", 2010, 101,01, "Compact Car", "Red", 8000, "https://2-photos.motorcar.com/used-2010-ford-focus-4drsedanse-6173-18134378-2-640.jpg"),
+("Focus", "Ford", 2010, 101001, "Compact Car", "Red", 8000, "https://2-photos.motorcar.com/used-2010-ford-focus-4drsedanse-6173-18134378-2-640.jpg"),
 ("Challenger", "Dodge", 2014, 43766, "Compact Car", "Red", 26495, "https://images.carstory.com/-3221867742535194245/6/t/704x-"),
 ("Challenger", "Dodge", 2017, 24503, "Compact Car", "White", 30000, "https://cars.usnews.com/static/images/Auto/izmo/i10824739/2017_dodge_challenger_angularfront.jpg"),
 ("Challenger", "Dodge", 2019, 2345, "Compact Car", "Gray", 36013, "https://www.lindsaychryslerdodgejeepram.com/inventoryphotos/4503/2c3cdzc99kh508437/ip/3.jpg?height=400"),
@@ -43,10 +74,12 @@ VAlUES
 ("Camaro", "Chevy", 2008, 37839, "Compact Car", "Black", 15500, "https://www.supercars.net/blog/wp-content/uploads/2016/03/2008_Chevrolet_CamaroBlackConcept2.jpg"),
 ("Camaro", "Chevy", 2014, 15664, "Compact Car", "Red", 24450, "https://static.cargurus.com/images/site/2013/07/10/16/52/2014_chevrolet_camaro-pic-4897054205892425793-640x480.jpeg"),
 ("Corvette", "Chevy", 1999, 73584, "Compact Car", "Blue", 20000, "https://i.ytimg.com/vi/TdPFJuC-cG0/hqdefault.jpg"),
-("Corvette", "Chevy", 2019, 1123, "Compact Car", 56000, "Black", "https://inventory-dmg.assets-cdk.com/RTT/Chevrolet/2019/3866783/default/ext_GBA_deg01x640.jpg"),
+("Corvette", "Chevy", 2019, 1123, "Compact Car", "Black", 56000, "https://inventory-dmg.assets-cdk.com/RTT/Chevrolet/2019/3866783/default/ext_GBA_deg01x640.jpg"),
 ("Tahoe", "Chevy", 2019, 3546, "SUV", "Black", 50000, "https://inventory-dmg.assets-cdk.com/2/6/1/19554907162.jpg"),
 ("Tahoe", "Chevy", 2013, 11997, "SUV", "Gray", 22580, "https://img.vast.com/original/3520058275632423278"),
 ("Tahoe", "Chevy", 2004, 84029, "SUV", "White", 10040, "http://carphotos.cardomain.com/ride_images/2/3912/2901/22278950002_large.jpg"),
 ("Colorado", "Chevy", 2015, 31555, "Truck", "White", 16800, "https://cdn04.carsforsale.com/3/316702/30734826/thumb/1402772630.jpg13"),
 ("Colorado", "Chevy", 2012, 63885, "Truck", "Blue", 13560, "http://assets.trucktrend.com/f/16517288.jpg?width=660&height=495"),
-("Colorado", "Chevy", 2009, 85454, "Truck", "Red", 11450, "https://invimg.autofunds.com/InventoryImages/2019/06/13/3752_1476592_42419972_10163813162019_90.jpg"),
+("Colorado", "Chevy", 2009, 85454, "Truck", "Red", 11450, "https://invimg.autofunds.com/InventoryImages/2019/06/13/3752_1476592_42419972_10163813162019_90.jpg");
+
+SELECT * FROM cars;
