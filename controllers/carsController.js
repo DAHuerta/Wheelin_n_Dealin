@@ -11,10 +11,11 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the cars
-  app.get("/api/cars", function(req, res) {
+  app.get("/", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.Cars.findAll({}).then(function(dbCars) {
       // We have access to the cars as an argument inside of the callback function
+      console.log(dbCars)
       res.json(dbCars);
     });
   });

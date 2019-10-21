@@ -1,12 +1,9 @@
 
 DROP DATABASE IF EXISTS car_db;
-DROP DATABASE IF EXISTS user_db;
 
 CREATE DATABASE car_db;
-CREATE DATABASE user_db;
 
 USE car_db;
-USE user_db;
 
 
 CREATE TABLE car (
