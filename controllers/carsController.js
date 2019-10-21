@@ -12,12 +12,12 @@ module.exports = function (app) {
 
   app.get("/", function (req, res) {
     // findAll returns all entries for a table when used with no options
-    db.Cars.findAll({}).then(function (data) {
+    db.Cars.findAll({}).then(function (dbCars) {
       // We have access to the cars as an argument inside of the callback function
       var dbCars = {
         cars: dbCars
       }
-      console.log(dbCars)
+      console.log("/ route is below", dbCars)
 
       res.render("index", dbCars);
     });
@@ -28,9 +28,9 @@ module.exports = function (app) {
     db.Cars.findAll({}).then(function (data) {
       // We have access to the cars as an argument inside of the callback function
       var dbCars = {
-        cars: dbCars
+        cars: data[0]
       }
-      console.log(dbCars)
+      console.log("car data below", dbCars)
       res.render("inventory", dbCars);
     });
   });
