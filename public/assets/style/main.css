@@ -20,6 +20,7 @@ footer {
     text-align: center;
     border-radius: 18px;
     margin-bottom: 5%;
+    border-style: solid;
 }
 
 .nav-bar {
@@ -71,4 +72,20 @@ img {
     border-radius: 18px;
     padding: 2rem;
     border-style: solid;
+}
+
+.body-home {
+    background: white;
+    border-radius: 18px;
+    padding: 1rem;
+    border-style: solid;
+    margin-bottom: 5%;
+}
+
+.body-inventory {
+    background: white;
+    border-radius: 18px;
+    padding: 1rem;
+    border-style: solid;
+    margin-bottom: 5%;
 }
