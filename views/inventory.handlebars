@@ -1,18 +1,22 @@
-<div class="body">
-    <p>Holding Place for welcome information</p>
-    <div>See our current selection below!</div>
+<div class="body-inventory">
+    <p>Welcome to our inventory page. At Wheelin' N Dealin', we are sure to have any vehicle that fits your needs. We
+        have a wide variety of all types of vehicles from the best manufactors such as Chevy, Ford, Toyota and others.
+    </p>
+    <p>Find your next car, truck or SUV with Wheelin' N Dealin', our entire inventory is shown below!</p>
+    <p>If you prefer, you can also use our search functionality to find a vehicle that is personally tailored to your
+        needs without browsing through our entire catalog.</p>
     <ul class="car-show">
-    {{#each cars}}
-    Model: {{model}}<br>
-    Make: {{make}}<br>
-    Year: {{year}}<br>
-    Mileage: {{mileage}}<br>
-    Type: {{type}}<br>
-    Color: ${{color}}<br>
-    Price: {{price}}<br>
-    <img src={{image}}><br>
-    <div class="car-break"></div>
-    {{/each}}
+        <div>Wheelin' N Dealin' 2019 Inventory</div>
+        <p>_________________________________________</p>
+        {{#each cars}}
+        Your favorite new car is a....<br>
+        {{year}} {{make}} {{model}}<br>
+        {{color}} {{type}}<br>
+        Mileage: {{mileage}}<br>
+        Asking Price: ${{price}}<br>
+        <img src={{image}}><br>
+        <div class="car-break"></div>
+        {{/each}}
 </div>
 
 <div class="body-deals">
