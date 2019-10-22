@@ -4,6 +4,16 @@
 
 <div class="body-images">
     <p>Holding Place for intial cars that will be rendered on page</p>
+            {{#each cars}}
+            <li>Model: {{model}}</li>
+            <li>Make: {{make}}</li>
+            <li>Year: {{year}}</li>
+            <li>Mileage: {{mileage}}</li>
+            <li>Type: {{type}}</li>
+            <li>Color: {{color}}</li>
+            <li>Price: {{price}}</li>
+            <img src={{image}}>
+        {{/each}}
 </div>
 
 <div class="body-deals">

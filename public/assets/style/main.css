@@ -18,9 +18,25 @@ footer {
     background: cornsilk;
     padding: 2rem;
     text-align: center;
+    border-radius: 18px;
 }
 
 .nav-bar {
     text-align: right;
     margin-top: 2rem;
+}
+
+img {
+    height: 200px;
+    border-radius: 18px;
+}
+
+.car-show {
+    background: white;
+    width: 45%;
+    border-radius: 18px;
+}
+
+hr {
+
 }
