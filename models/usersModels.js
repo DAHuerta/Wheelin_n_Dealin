@@ -20,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     favorite_color: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         // notNull: true,
         // notEmpty: true,
@@ -29,7 +29,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     favorite_type: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         // notNull: true,
         // notEmpty: true,
@@ -38,7 +38,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     favorite_make: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         // notNull: true,
         // notEmpty: true,
@@ -47,7 +47,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     authorized: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false
+      defaultValue: true
     }
   });
   return Users;

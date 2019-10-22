@@ -19,7 +19,9 @@ module.exports = function(app) {
     });
   });
 
-  // POST route for saving a new todo
+  //link up to the new user signup page 
+
+  // POST route for saving a new user
   app.post("/api/users", function(req, res) {
     // create takes an argument of an object describing the item we want to insert
     // into our table. In this case we just we pass in an object with a text and
