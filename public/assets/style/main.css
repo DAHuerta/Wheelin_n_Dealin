@@ -15,7 +15,7 @@ body {
 }
 
 footer {
-    background: cornsilk;
+    background: #e6e9ec;
     padding: 2rem;
     text-align: center;
     border-radius: 18px;
@@ -33,6 +33,9 @@ img {
     width: 600px;
     margin-top: 3rem;
     margin-bottom: 3rem;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
 }
 
 .car-show {
@@ -42,6 +45,7 @@ img {
     margin-left: 10%;
     text-align: center;
     font-size: 28px;
+    border-style: solid;
 }
 
 .car-break {
