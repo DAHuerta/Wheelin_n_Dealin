@@ -9,13 +9,16 @@ body {
 }
 
 .jumbotron {
+    background: black;
+    color: #e6e9ec;
     border-radius: 18px;
     text-align: center;
     border-style: solid;
 }
 
 footer {
-    background: #e6e9ec;
+    background: black;
+    color: #e6e9ec;
     padding: 2rem;
     text-align: center;
     border-radius: 18px;
@@ -26,6 +29,7 @@ footer {
 .nav-bar {
     text-align: right;
     margin-top: 2rem;
+    margin-bottom: -2rem;
 }
 
 img {
@@ -35,12 +39,13 @@ img {
     margin-top: 3rem;
     margin-bottom: 3rem;
     border-style: solid;
-    border-color: black;
+    border-color: e6e9ec;
     border-width: 2px;
 }
 
 .car-show {
-    background: #e7eaed;
+    background: black;
+    color: #e6e9ec;
     width: 80%;
     border-radius: 18px;
     margin-left: 10%;
@@ -63,7 +68,7 @@ img {
     text-align: center;
     color: white;
     font-size: 28px;
-    margin-top: 1rem;
+    margin-top: 3rem;
 }
 
 .secret-intro {
@@ -75,7 +80,8 @@ img {
 }
 
 .body-home {
-    background: white;
+    background: black;
+    color: #e6e9ec;
     border-radius: 18px;
     padding: 1rem;
     border-style: solid;
@@ -83,9 +89,16 @@ img {
 }
 
 .body-inventory {
-    background: white;
+    background: #e6e9ec;
     border-radius: 18px;
     padding: 1rem;
     border-style: solid;
     margin-bottom: 5%;
+}
+
+.body-deals {
+    background: blueviolet;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    border-radius: 18px;
 }
