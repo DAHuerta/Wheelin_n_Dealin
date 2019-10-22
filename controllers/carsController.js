@@ -9,8 +9,8 @@ module.exports = function (app) {
       var carOb = {
         cars: dbCars.slice(0, 4)
       }
-        console.log(carOb)
-        res.render("index", carOb);
+      console.log(carOb)
+      res.render("index", carOb);
 
     });
   });
@@ -23,8 +23,8 @@ module.exports = function (app) {
       var carOb = {
         cars: dbCars
       }
-        console.log(carOb)
-        res.render("inventory", carOb);
+      console.log(carOb)
+      res.render("inventory", carOb);
 
     });
   });
@@ -37,14 +37,14 @@ module.exports = function (app) {
       //   cars: dbCars
       // }
       //   console.log(carOb)
-        res.render("profile2", { layout: "main.handlebars" });
+      res.render("profile2", { layout: "main.handlebars" });
     });
   });
 
 
-  app.get("/login", function(req, res) {
+  app.get("/login", function (req, res) {
     // findAll returns all entries for a table when used with no options
-    db.Cars.findAll({}).then(function(dbCars) {
+    db.Cars.findAll({}).then(function (dbCars) {
       // We have access to the cars as an argument inside of the callback function
       var dbCars = {
         cars: dbCars
@@ -67,9 +67,8 @@ module.exports = function (app) {
       var secretOb = {
         cars: dbCars
       }
-        console.log(secretOb)
-        res.render("secret", secretOb);
-
+      console.log(secretOb)
+      res.render("secret", secretOb);
     });
   });
 

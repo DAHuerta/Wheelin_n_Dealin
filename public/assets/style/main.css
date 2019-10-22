@@ -74,7 +74,8 @@ img {
 }
 
 .secret-intro {
-    background: #e8ebee;
+    background: black;
+    color: #e6e9ec;
     text-align: center;
     border-radius: 18px;
     padding: 2rem;
@@ -125,4 +126,9 @@ img {
     padding: 1rem;
     margin-bottom: 3rem;
     border-style: groove;
+}
+
+.card {
+    color: black;
+    border-radius: 18px;;
 }

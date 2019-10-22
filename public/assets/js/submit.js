@@ -11,7 +11,11 @@ $(document).ready(function(){
 
     $("#insert-cars").on("click", function(){
         insertCars()
-    })
+    });
+
+    $("#secret-menu-btn").on("click", function(){
+      console.log("secret menu")
+  });
 
     function updateCars(cars) {
         $.ajax({
