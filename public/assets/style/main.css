@@ -106,3 +106,23 @@ img {
     margin-bottom: 4%;
     border-radius: 18px;
 }
+
+#profile-picture {
+    height: 300px;
+    width: 300px;
+    margin-top: 0;
+}
+
+.profile-page {
+    background: white;
+    margin-bottom: 5%;
+    padding: 2rem;
+    border-radius: 18px;
+    border-style: solid;
+}
+
+.btn-light {
+    padding: 1rem;
+    margin-bottom: 3rem;
+    border-style: groove;
+}

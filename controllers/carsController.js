@@ -29,6 +29,18 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/userprofile", function (req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Cars.findAll({}).then(function (dbCars) {
+      // We have access to the cars as an argument inside of the callback function
+      // var carOb = {
+      //   cars: dbCars
+      // }
+      //   console.log(carOb)
+        res.render("profile2", { layout: "main.handlebars" });
+    });
+  });
+
 
   app.get("/login", function(req, res) {
     // findAll returns all entries for a table when used with no options
