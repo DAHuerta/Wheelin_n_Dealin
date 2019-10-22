@@ -10,16 +10,11 @@ var db = require("../models");
 // Routes =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the cars
-  app.get("/api/users", function(req, res) {
-    // findAll returns all entries for a table when used with no options
-    db.Users.findAll({}).then(function(dbUsers) {
-      // We have access to the cars as an argument inside of the callback function
-      res.json(dbUsers);
-    });
-  });
 
-  //link up to the new user signup page 
+  //link up to the new user signup page
+  app.get('/signup', function (req, res) {
+    res.render('signup', { layout: 'main.handlebars' });
+  });
 
   // POST route for saving a new user
   app.post("/api/users", function(req, res) {
@@ -31,8 +26,7 @@ module.exports = function(app) {
       password: req.body.password,
       favorite_color: req.body.favColor,
       favorite_type: req.body.favType,
-      fav_make: req.body.favMake,
-      authorized: req.body.authorized
+      fav_make: req.body.favMake
     }).then(function(dbUsers) {
       // We have access to the new todo as an argument inside of the callback function
       res.json(dbUsers);
@@ -43,39 +37,27 @@ module.exports = function(app) {
 
   });
 
-  // DELETE route for deleting cars. We can get the id of the todo to be deleted
-  // from req.params.id
-  app.delete("/api/users/:id", function(req, res) {
-    // Destroy takes in one argument: a "where object describing the cars we want to destroy
-    db.Users.destroy({
-      where: {
-        id: req.params.id
-      }
-    })
-      .then(function(dbUsers) {
-        res.json(dbUsers);
-      });
+  //link up to the login page:
+  app.get('/login', function (req, res) {
+    res.render('login', { layout: 'main.handlebars' });
+  });
 
-  });
-  // PUT route for updating cars. We can get the updated todo data from req.body
-  app.put("/api/users/update/:id", function(req, res) {
-    // Update takes in two arguments, an object describing the properties we want to update,
-    // and another "where" object describing the cars we want to update
-    db.Todo.update({
-        user_name: req.body.name,
-        password: req.body.password,
-        favorite_color: req.body.favColor,
-        favorite_type: req.body.favType,
-        fav_make: req.body.favMake,
-        authorized: req.body.authorized
-    }, {
-      where: {
-        id: req.params.id
+  //get route for checking if user exist:
+  app.get("/login", function(req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Cars.findAll({}).then(function(dbUser) {
+      // We have access to the cars as an argument inside of the callback function
+      if(req.body.user_name === dbUser.user_name && req.body.password === dbUser.password){
+        alert(`Welcome ${req.body.user_name}`)
+        window.location = "/user/profile/" + req.body.user_name;
+      }else {
+        alert(`Invalid username or password`)
+        location.reload()
       }
     })
-      .then(function(dbUsers) {
-        res.json(dbUsers);
-      });
+    res.end()
   });
+
+    
 
 };
