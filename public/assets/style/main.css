@@ -1,3 +1,48 @@
 body {
-    background: URL("https://assets.entrepreneur.com/images/misc/1552673477_Inside-Porsche-Palm-Springs.jpg?width=1000?width=1000");
+    background-image: url("https://assets.entrepreneur.com/images/misc/1552673477_Inside-Porsche-Palm-Springs.jpg?width=1000?width=1000");
+    background-size: 100%;
+    background-attachment: fixed;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+    opacity: .99;
+}
+
+.jumbotron {
+    border-radius: 18px;
+    text-align: center;
+    border-style: solid;
+}
+
+footer {
+    background: cornsilk;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 18px;
+}
+
+.nav-bar {
+    text-align: right;
+    margin-top: 2rem;
+}
+
+img {
+    height: 400px;
+    border-radius: 18px;
+    width: 600px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.car-show {
+    background: white;
+    width: 80%;
+    border-radius: 18px;
+    margin-left: 10%;
+    text-align: center;
+}
+
+.car-break {
+    border-style: solid;
+    width: 95%;
 }
