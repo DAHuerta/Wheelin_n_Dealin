@@ -21,7 +21,7 @@ $(document).ready(function(){
         }).then(getTodos);
       };
 
-      //add new cars using user pyear:
+      //add new cars using user year:
       // when user clicks add-btn
 $("#add-btn").on("click", function(event) {
   event.preventDefault();

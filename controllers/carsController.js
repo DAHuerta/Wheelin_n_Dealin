@@ -33,8 +33,8 @@ module.exports = function (app) {
 
 
   //render user page
-  app.get('/user', function (req, res) {
-    res.render('user', { layout: 'main.handlebars' });
+  app.get('/postcar', function (req, res) {
+    res.render('postcar', { layout: 'main.handlebars' });
   });
   // POST route for saving a new todo
   app.post("/api/newcars", function (req, res) {
