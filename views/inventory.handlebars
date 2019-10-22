@@ -2,17 +2,17 @@
     <p>Holding Place for welcome information</p>
     <div>See our current selection below!</div>
     <ul class="car-show">
-        {{#each cars}}
-            <li>Model: {{model}}</li>
-            <li>Make: {{make}}</li>
-            <li>Year: {{year}}</li>
-            <li>Mileage: {{mileage}}</li>
-            <li>Type: {{type}}</li>
-            <li>Color: {{color}}</li>
-            <li>Price: {{price}}</li>
-            <img src={{image}}>
-        {{/each}}
-    </ul>
+    {{#each cars}}
+    Model: {{model}}<br>
+    Make: {{make}}<br>
+    Year: {{year}}<br>
+    Mileage: {{mileage}}<br>
+    Type: {{type}}<br>
+    Color: ${{color}}<br>
+    Price: {{price}}<br>
+    <img src={{image}}><br>
+    <div class="car-break"></div>
+    {{/each}}
 </div>
 
 <div class="body-deals">

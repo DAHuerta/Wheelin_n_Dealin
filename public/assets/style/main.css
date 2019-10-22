@@ -5,7 +5,7 @@ body {
     width: 80%;
     margin-left: 10%;
     margin-top: 5%;
-    opacity: .90;
+    opacity: .99;
 }
 
 .jumbotron {
@@ -27,16 +27,22 @@ footer {
 }
 
 img {
-    height: 200px;
+    height: 400px;
     border-radius: 18px;
+    width: 600px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 .car-show {
     background: white;
-    width: 45%;
+    width: 80%;
     border-radius: 18px;
+    margin-left: 10%;
+    text-align: center;
 }
 
-hr {
-
+.car-break {
+    border-style: solid;
+    width: 95%;
 }
