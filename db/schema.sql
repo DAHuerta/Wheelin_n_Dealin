@@ -25,6 +25,10 @@ CREATE TABLE user (
     favorite_color VARCHAR(255), 
     favorite_type VARCHAR(255),
     favorite_make VARCHAR(255),
+<<<<<<< HEAD
     authorized BOOLEAN DEFAULT FAlSE,
     PRIMARY KEY (id)
+=======
+    authorized BOOLEAN DEFAULT FAlSE
+>>>>>>> 04faa43f19ceb6cb03eb77e233d70099a61586d9
 );

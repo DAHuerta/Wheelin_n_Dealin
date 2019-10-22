@@ -45,10 +45,7 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 200]
       }
     },
-    authorized: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: true
-    }
+    
   });
   return Users;
 };

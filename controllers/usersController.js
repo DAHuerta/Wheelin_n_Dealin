@@ -32,7 +32,6 @@ module.exports = function(app) {
       favorite_color: req.body.favColor,
       favorite_type: req.body.favType,
       fav_make: req.body.favMake,
-      authorized: req.body.authorized
     }).then(function(dbUsers) {
       // We have access to the new todo as an argument inside of the callback function
       res.json(dbUsers);

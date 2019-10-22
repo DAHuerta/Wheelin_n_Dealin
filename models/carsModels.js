@@ -13,7 +13,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER, allowNull: true
     },
     mileage: {
-      type: DataTypes.INTEGER, allowNull: false
+      type: DataTypes.INTEGER, allowNull: true
     },
     type: {
       type: DataTypes.STRING, allowNull: false, validate: {// notNull: true,
