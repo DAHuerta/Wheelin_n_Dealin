@@ -24,10 +24,11 @@ footer {
     border-radius: 18px;
     margin-bottom: 5%;
     border-style: solid;
+    padding-bottom: 1rem;
 }
 
 .nav-bar {
-    text-align: right;
+    text-align: center;
     margin-top: 2rem;
     margin-bottom: -2rem;
 }
@@ -52,6 +53,7 @@ img {
     text-align: center;
     font-size: 28px;
     border-style: solid;
+    padding-top: 1rem;
 }
 
 .car-break {
@@ -94,6 +96,8 @@ img {
     padding: 1rem;
     border-style: solid;
     margin-bottom: 5%;
+    width: 90%;
+    margin-left: 5%;
 }
 
 .body-deals {
