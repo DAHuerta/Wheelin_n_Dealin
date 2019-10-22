@@ -1,15 +1,5 @@
-// *****************************************************************************
-// **** api-routes.js - this file offers a set of routes for displaying and
-// saving data to the db
-// ******************************************************************************
-// *** Dependencies
-
-// Requiring our models
 var db = require("../models");
 
-
-
-// Routes =============================================================
 module.exports = function (app) {
 
   app.get("/", function (req, res) {
@@ -57,6 +47,20 @@ module.exports = function (app) {
   app.get('/postcar', function (req, res) {
     res.render('postcar', { layout: 'main.handlebars' });
   });
+
+  app.get("/carma_sutra", function (req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Cars.findAll({}).then(function (dbCars) {
+      // We have access to the cars as an argument inside of the callback function
+      var secretOb = {
+        cars: dbCars
+      }
+        console.log(secretOb)
+        res.render("secret", secretOb);
+
+    });
+  });
+
   // POST route for saving a new todo
   app.post("/api/newcars", function (req, res) {
     // create takes an argument of an object describing the item we want to insert

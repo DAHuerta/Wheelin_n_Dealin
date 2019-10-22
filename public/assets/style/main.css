@@ -36,15 +36,35 @@ img {
 }
 
 .car-show {
-    background: white;
+    background: #e7eaed;
     width: 80%;
     border-radius: 18px;
     margin-left: 10%;
     text-align: center;
+    font-size: 28px;
 }
 
 .car-break {
     border-style: solid;
     width: 90%;
     margin-left: 5%;
+}
+
+.secret-show {
+    background: #2b0505;
+    width: 80%;
+    border-radius: 18px;
+    margin-left: 10%;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    margin-top: 1rem;
+}
+
+.secret-intro {
+    background: #e8ebee;
+    text-align: center;
+    border-radius: 18px;
+    padding: 2rem;
+    border-style: solid;
 }
