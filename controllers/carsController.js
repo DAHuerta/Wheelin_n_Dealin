@@ -7,7 +7,7 @@ module.exports = function (app) {
     db.Cars.findAll({}).then(function (dbCars) {
       // We have access to the cars as an argument inside of the callback function
       var carOb = {
-        cars: dbCars.slice(0, 5)
+        cars: dbCars.slice(0, 4)
       }
         console.log(carOb)
         res.render("index", carOb);
@@ -44,8 +44,8 @@ module.exports = function (app) {
   });
 
   //render user page
-  app.get('/postcar', function (req, res) {
-    res.render('postcar', { layout: 'main.handlebars' });
+  app.get("/postcar", function (req, res) {
+    res.render("postcar", { layout: "main.handlebars" });
   });
 
   app.get("/carma_sutra", function (req, res) {
