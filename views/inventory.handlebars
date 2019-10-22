@@ -1,17 +1,17 @@
 <div class="body">
     <p>Holding Place for welcome information</p>
-    <div>Holding Place for all cars that will be rendered on page</div>
-    {{#each cars }}
-    <ul>
-        <li>{{model}}</li>
-        <li>{{make}}</li>
-        <li>{{year}}</li>
-        <li>{{mileage}}</li>
-        <li>{{type}}</li>
-        <li>{{color}}</li>
-        <li>{{price}}</li>
-        <li><img src={{image}}></li>
-    </ul>
+    <div>See our current selection below!</div>
+    <ul class="car-show">
+    {{#each cars}}
+    Model: {{model}}<br>
+    Make: {{make}}<br>
+    Year: {{year}}<br>
+    Mileage: {{mileage}}<br>
+    Type: {{type}}<br>
+    Color: ${{color}}<br>
+    Price: {{price}}<br>
+    <img src={{image}}><br>
+    <div class="car-break"></div>
     {{/each}}
 </div>
 

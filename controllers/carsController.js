@@ -22,15 +22,28 @@ module.exports = function (app) {
     // findAll returns all entries for a table when used with no options
     db.Cars.findAll({}).then(function (dbCars) {
       // We have access to the cars as an argument inside of the callback function
-      var carObj = {
-        cars: dbCars
+      var carOb = {
+        cars: dbCars.slice(0, 5)
       }
-      console.log(carObj)
-      // res.json(carObj)
-      res.render("inventory", carObj);
+        console.log(carOb)
+        res.render("index", carOb);
+
     });
   });
 
+
+  app.get("/login", function(req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Cars.findAll({}).then(function(dbCars) {
+      // We have access to the cars as an argument inside of the callback function
+      var dbCars = {
+        cars: dbCars
+      }
+      console.log(dbCars)
+      // res.json(dbCars)
+      res.render("index", dbCars);
+    });
+  });
 
   //render user page
   app.get('/postcar', function (req, res) {

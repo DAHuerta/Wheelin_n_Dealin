@@ -2,8 +2,19 @@
     <p>Holding Place for welcome information</p>
 </div>
 
-<div class="body-images">
+<div class="car-show">
     <p>Holding Place for intial cars that will be rendered on page</p>
+    {{#each cars}}
+    Model: {{model}}
+    Make: {{make}}
+    Year: {{year}}
+    Mileage: {{mileage}}
+    Type: {{type}}
+    Color: ${{color}}
+    Price: {{price}}
+    <img src={{image}}>
+    <div class="car-break"></div>
+    {{/each}}
 </div>
 
 <div class="body-deals">
