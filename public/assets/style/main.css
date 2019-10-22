@@ -19,6 +19,7 @@ footer {
     padding: 2rem;
     text-align: center;
     border-radius: 18px;
+    margin-bottom: 5%;
 }
 
 .nav-bar {
@@ -44,5 +45,6 @@ img {
 
 .car-break {
     border-style: solid;
-    width: 95%;
+    width: 90%;
+    margin-left: 5%;
 }
