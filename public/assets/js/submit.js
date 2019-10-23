@@ -25,8 +25,8 @@ $(document).ready(function(){
       // when user clicks add-btn
 $("#add-btn").on("click", function(event) {
   event.preventDefault();
-  // make a newCharacter obj
-  var newCharacter = {
+  // make a newCar obj
+  var newCar = {
     // model from model input
     model: $("#model").val().trim(),
     // make from make input
@@ -48,7 +48,7 @@ $("#add-btn").on("click", function(event) {
   };
 
   // send an AJAX POST-request with jQuery
-  $.post("/api/newcars", newCharacter)
+  $.post("/api/newcars", newCar)
     // on success, run this callback
     .then(function(data) {
       // log the data we found
@@ -69,4 +69,48 @@ $("#add-btn").on("click", function(event) {
   $("#hidden").val("");
 });
 
+
+  //user sign up:
+  $("#signup-btn").on("click", function(event){
+    event.preventDefault();
+
+    var password = $("#password-signup").val().trim();
+    var rePassword = $("#repeat-password-signup").val().trim();
+    console.log(password);
+    console.log(rePassword);
+
+    if(password != rePassword){
+      alert(`Password and repeat password does not match`)
+      location.reload()
+    }
+
+    var newUser = {
+      email: $("#email-signup").val().trim(),
+      password: $("#password-signup").val().trim()
+    }
+
+    $.post("/api/newuser", newUser)
+    .then(function(data){
+    
+      //redirect to user profile page after getting data back from controller
+      alert(`user profile successfully created. Please login to access profile`)
+      window.location = "/user/profile"
+    })
+  })
+
+  //user login:
+  $("#login-btn").on("click", function(event){
+    event.preventDefault();
+
+    var loginInfo = {
+      email: $("#email-login").val().trim(),
+      password: $("#password-login").val().trim()
+    }
+
+    $.get("/api/login", loginInfo).then(function(data){
+      alert(`welcome ${data.user_name}`)
+    })
+
+
+  })
 });
