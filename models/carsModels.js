@@ -1,5 +1,3 @@
-
-
 module.exports = function (sequelize, DataTypes) {
   var Cars = sequelize.define("Cars", {
     model: {
