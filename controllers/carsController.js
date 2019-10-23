@@ -40,9 +40,9 @@ module.exports = function (app) {
       // var dbCars = {
       //   cars: dbCars
       // }
-      console.log(dbCars)
+      // console.log(dbCars)
       // res.json(dbCars)
-      res.render("login", dbCars);
+      res.render("profile", dbCars);
     });
   });
 
@@ -50,9 +50,7 @@ module.exports = function (app) {
   app.get("/login/profile", function (req, res) {
 
     db.Cars.findAll({}).then(function (dbCars) {
-
-      console.log(dbCars)
-
+      // console.log(dbCars)
       res.render("profile2", dbCars);
     });
   });
@@ -61,7 +59,7 @@ module.exports = function (app) {
 
     db.Cars.findAll({}).then(function (dbCars) {
 
-      console.log(dbCars)
+      // console.log(dbCars)
 
       res.render("signup", dbCars);
     });
@@ -70,10 +68,7 @@ module.exports = function (app) {
   app.get("/signup", function (req, res) {
 
     db.Cars.findAll({}).then(function (dbCars) {
-
-
-      console.log(dbCars)
-
+      // console.log(dbCars)
       res.render("main", dbCars);
     });
   });
@@ -102,7 +97,7 @@ module.exports = function (app) {
       // We have access to the new todo as an argument inside of the callback function
       res.json(dbCars);
     }).catch(function (err) {
-      console.log(err.message)
+      // console.log(err.message)
       res.send(err.message)
     });
 
@@ -159,7 +154,7 @@ module.exports = function (app) {
       var secretOb = {
         cars: dbCars
       }
-      console.log(secretOb)
+      // console.log(secretOb)
       res.render("secret", secretOb);
     });
   });
@@ -186,7 +181,7 @@ module.exports = function (app) {
       // We have access to the new todo as an argument inside of the callback function
       res.json(dbCars);
     }).catch(function (err) {
-      console.log(err.message)
+      // console.log(err.message)
       res.send(err.message)
 
     });
