@@ -1,0 +1,34 @@
+<ul>
+
+<li>
+	{{#each cars}}
+    Model: {{model}}
+    Make: {{make}}
+    Year: {{year}}
+    Color: ${{color}}
+    {{#if auction}}
+    bid: {{bid}}
+    currentBidder: {{currentBidder}}
+    <form>
+        <input type="number" id="bid"></input>
+        <input type="text" id="bidder"></input>
+        <button id="submit">Submit!</button>
+    </form>
+    {{/if}}
+    {{/each}}
+
+	{{!-- <button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
+		{{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
+	</button>
+
+	<button class="delete-cat" data-id="{{this.id}}">DELETE!</button> --}}
+</li>
+
+</ul>
+
+{{!-- List all cars that are on auction --}}
+{{!-- take in each cars {{#each cars}} --}}
+{{!-- If auction true display to page --}}
+{{!-- click on car for details of the car auction/detail}}
+{{!-- auction detail page would show bid detail and allow user to post own bid}}
+{{!-- if bid posted update current bid}}

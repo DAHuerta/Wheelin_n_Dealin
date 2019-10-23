@@ -70,3 +70,14 @@ $("#add-btn").on("click", function(event) {
 });
 
 });
+
+$("#submit").on("click", function(event) {
+  event.preventDefault();
+
+  var newBid = {
+    //grabs bid from bidder
+    bid: $("#bid").val().trim(),
+    // hidden from hidden input. true of false
+    bidder: $("#bidder").val().trim(),
+  }
+}
