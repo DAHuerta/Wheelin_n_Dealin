@@ -70,10 +70,11 @@ module.exports = function (app) {
 
   app.get("/vehicle_search", function (req, res) {
     res.render("search", { layout: "main.handlebars" })
-  })
+  });
 
-  app.get("/api/searchcars", function (req, res) {
-    var model = req.query.model
+  app.get("/inventory/:model", function (req, res) {
+    var model = req.params.model
+    console.log(model)
 
     db.Cars.findAll({
       where: {
@@ -85,14 +86,17 @@ module.exports = function (app) {
         // price: req.body.price,
       }
     }).then(function (dbCars) {
-      console.log(dbCars)
-      res.json(dbCars);
+        var dataOb = {
+          cars: dbCars
+        }
+      console.log(dataOb)
+      res.render("index", dataOb)
     })
-  })
+  });
 
-  app.get("/user/search", function (req, res) {
-  
-  }
+  // app.get("/user/search", function (req, res) {
+  //   res.render("search", req)
+  // }
 
   // req.query.model
   // var {bla} = req.query 
