@@ -138,7 +138,29 @@ $(document).ready(function () {
         //redirect to profile page. look at burgerJS for hints
       }
     })
+  })
 
+  //delete button from user profile page:
+  $("#delete-button").on("click", function(event){
+    event.preventDefault();
+    // var deleteCar = confirm("Are you sure?")
 
+    var carId = $(this).data("carid")
+    
+    console.log($(this).data("carid"))
+    $.ajax({
+      method: "DELETE",
+      url: "/api/car/delete/" + carId,
+    }).then(function(data){
+      // console.log(data)
+      alert(`Car deleted`)
+    })
   })
 });
+
+
+// $.ajax({
+//   method: "DELETE",
+//   url: "/api/authors/" + id
+// })
+//   .then(getAuthors);

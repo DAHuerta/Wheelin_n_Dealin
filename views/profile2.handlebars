@@ -42,18 +42,19 @@
                     accident, sometimes on purpose (injected humour and the like).</p>
             </div>
 
+
             <h1>Your Posted Cars</h1>
-            <div class="profile-saved">
-                {{#each userCar}}
+            <ul>
+                {{#each postedCars}}
                 Your favorite new car is a....<br>
                 {{year}} {{make}} {{model}}<br>
                 {{color}} {{type}}<br>
                 Mileage: {{mileage}}<br>
                 Asking Price: ${{price}}<br>
                 <img src={{image}}><br>
-                <div class="car-break"></div>
+                {{>updateDelete }}
                 {{/each}}
-            </div>
+            </ul>
         </div>
         <div class="col-md-2 profile-right">
             <div class="profile-links">
