@@ -23,7 +23,7 @@ $(document).ready(function() {
   //     url: "/api/cars",
   //     data: cars
   //   }).then(getTodos);
-  // }
+  // };
 
   
   $("#auctionId").on("click", function(event) {

@@ -36,8 +36,9 @@ module.exports = function (app) {
       var carOb = {
         cars: dbCars
       }
+      // console.log(carOb)
+      // res.json(carOb)
       res.render("inventory", carOb);
-
     });
   });
 
@@ -51,7 +52,7 @@ module.exports = function (app) {
       // }
       console.log(dbCars)
       // res.json(dbCars)
-      res.render("login", dbCars);
+      res.render("profile", dbCars);
     });
   });
 
