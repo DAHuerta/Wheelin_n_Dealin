@@ -9,7 +9,6 @@ module.exports = function (app) {
       var carOb = {
         cars: dbCars.slice(0, 4)
       }
-      console.log(carOb)
       res.render("index", carOb);
 
     });
@@ -23,7 +22,6 @@ module.exports = function (app) {
       var carOb = {
         cars: dbCars
       }
-      console.log(carOb)
       res.render("inventory", carOb);
 
     });
@@ -48,9 +46,8 @@ module.exports = function (app) {
       // We have access to the cars as an argument inside of the callback function
       var dbCars = {
         cars: dbCars
-      }
-      console.log(dbCars)
       // res.json(dbCars)
+      }
       res.render("index", dbCars);
     });
   });
@@ -67,7 +64,6 @@ module.exports = function (app) {
       var secretOb = {
         cars: dbCars
       }
-      console.log(secretOb)
       res.render("secret", secretOb);
     });
   });
@@ -167,13 +163,19 @@ module.exports = function (app) {
     })
 })
 
-app.post("/api/auction", function(req,res) {
+app.put("/api/auction", function(req,res) {
+
   db.Cars.update({
     bid: req.body.bid,
-    currentBidder: req.body.currentBidder,
+    currentBidder: req.body.currentBidder
+  }, {
     where: {
       id: req.body.id
     }
-  })
+  }).then(function (data) {
+    console.log(data)
+    res.render("auction", data);
+  });
+
 })
 };

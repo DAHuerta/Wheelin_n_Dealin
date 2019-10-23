@@ -56,7 +56,6 @@ $("#add-btn").on("click", function(event) {
     // on success, run this callback
     .then(function(data) {
       // log the data we found
-      console.log(data);
       // tell the user we're adding a character with an alert window
       alert("Adding car...");
     });
@@ -73,21 +72,38 @@ $("#add-btn").on("click", function(event) {
   $("#hidden").val("");
 });
 
-$("#submit").on("click", function(event) {
+$("#auctionId").on("click", function(event) {
   event.preventDefault();
+  var currentBid = parseInt($("#currentBid").text());
+  var bid = parseInt($("#bid").val().trim())
 
-  var newBidder = {
-    bid: $("#bid").val().trim(),
+  var newBidder;
+  if (bid > currentBid) {
+    console.log(bid)
+    newBidder = {
+      bid: bid,
     // hidden from hidden input. true of false
-    bidder: $("#bidder").val().trim(),
+    currentBidder: $("#bidder").val().trim(),
     id: $("#auctionId").data("value")
-  };
+  }
+  } else {
+   newBidder = {
+      bid: currentBid,
+      // hidden from hidden input. true of false
+      currentBidder: $("#currentBidder").text(),
+      id: $("#auctionId").data("value")
+    }
+  }
+  console.log(newBidder.bid)
+    $.ajax({
+      method: "PUT",
+      url: "api/auction",
+      data: newBidder
+    })
+    .then(function(req, res) {
+      location.reload()
+    })
 
-  $.post("/api/auction", newBidder)
-  .then(function(data) {
-    console.log(data);
-    alert("Added bid");
-  });
 
 });
 

@@ -8,8 +8,14 @@
     Year: {{year}}<br>
     Color: {{color}}<br>
     <img src={{image}}><br>
-    bid: ${{bid}}<br>
-    currentBidder: {{currentBidder}}<br>
+    bid:
+    <div id="currentBid">
+    {{bid}}<br>
+    </div>
+    currentBidder:
+    <div id="currentBidder">
+    {{currentBidder}}<br>
+    </div>
     <form>
         <input type="number" id="bid"></input>
         <input type="text" id="bidder"></input>
