@@ -9,40 +9,126 @@ body {
 }
 
 .jumbotron {
+    background: black;
+    color: #e6e9ec;
     border-radius: 18px;
     text-align: center;
     border-style: solid;
 }
 
 footer {
-    background: cornsilk;
+    background: black;
+    color: #e6e9ec;
     padding: 2rem;
     text-align: center;
     border-radius: 18px;
+    margin-bottom: 5%;
+    border-style: solid;
+    padding-bottom: 1rem;
 }
 
 .nav-bar {
-    text-align: right;
+    text-align: center;
     margin-top: 2rem;
+    margin-bottom: -2rem;
 }
 
 img {
-    height: 400px;
+    height: 360;
     border-radius: 18px;
     width: 600px;
     margin-top: 3rem;
     margin-bottom: 3rem;
+    border-style: solid;
+    border-color: e6e9ec;
+    border-width: 2px;
 }
 
 .car-show {
-    background: white;
+    background: black;
+    color: #e6e9ec;
     width: 80%;
     border-radius: 18px;
     margin-left: 10%;
     text-align: center;
+    font-size: 28px;
+    border-style: solid;
+    padding-top: 1rem;
 }
 
 .car-break {
     border-style: solid;
-    width: 95%;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.secret-show {
+    background: #2b0505;
+    width: 80%;
+    border-radius: 18px;
+    margin-left: 10%;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    margin-top: 3rem;
+}
+
+.secret-intro {
+    background: black;
+    color: #e6e9ec;
+    text-align: center;
+    border-radius: 18px;
+    padding: 2rem;
+    border-style: solid;
+}
+
+.body-home {
+    background: black;
+    color: #e6e9ec;
+    border-radius: 18px;
+    padding: 1rem;
+    border-style: solid;
+    margin-bottom: 5%;
+}
+
+.body-inventory {
+    background: #e6e9ec;
+    border-radius: 18px;
+    padding: 1rem;
+    border-style: solid;
+    margin-bottom: 5%;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.body-deals {
+    background: blueviolet;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    border-radius: 18px;
+}
+
+#profile-picture {
+    height: 300px;
+    width: 300px;
+    margin-top: 0;
+}
+
+.profile-page {
+    background: white;
+    margin-bottom: 5%;
+    padding: 2rem;
+    border-radius: 18px;
+    border-style: solid;
+}
+
+.btn-light {
+    padding: 1rem;
+    margin-bottom: 3rem;
+    border-style: groove;
+}
+
+.card {
+    color: black;
+    border-radius: 18px;;
 }
