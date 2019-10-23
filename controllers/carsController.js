@@ -72,7 +72,7 @@ module.exports = function (app) {
     res.render("search", { layout: "main.handlebars" })
   });
 
-  app.get("/inventory", function (req, res) {
+  app.get("/inventory/search", function (req, res) {
     var filters = {};
     // destructuring the req.query object into individual variable names for ease of access
     var { make, model, color, mileage } = req.query;
@@ -94,14 +94,15 @@ module.exports = function (app) {
       filters.mileage = mileage;
     }
 
-    db.Cars.findAll({
+    console.log(filters.model)
 
-    }).then(function (filters) {
-      // var dataOb = {
-      //   cars: dbCars
-      // }
-      console.log(filters)
-      res.render("index", filters)
+    db.Cars.findAll({
+      where: filters,
+    }).then(function (dbCars) {
+      var searchOb = {
+        cars: dbCars
+      }
+      res.render("searchresults", searchOb)
     })
   });
 
@@ -135,7 +136,7 @@ module.exports = function (app) {
   // }).then(function (cars) {
   //   res.render("templateName", dataObjName);
   // })
-  //=====
+  // //=====
 
 
   // POST route for saving a new todo

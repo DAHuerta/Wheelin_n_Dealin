@@ -92,7 +92,7 @@ $(document).ready(function () {
     // $("#type-search").val("");
     // $("#color-search").val("");
     // $("#price-search").val("");
-    location.href=`/inventory/${searchCar.model}`
+    location.href=`/inventory/search`
   });
 
 });
