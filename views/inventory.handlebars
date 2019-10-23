@@ -9,13 +9,15 @@
         <div>Wheelin' N Dealin' 2019 Inventory</div>
         <p>_________________________________________</p>
         {{#each cars}}
-        Your favorite new car is a....<br>
-        {{year}} {{make}} {{model}}<br>
-        {{color}} {{type}}<br>
-        Mileage: {{mileage}}<br>
-        Asking Price: ${{price}}<br>
-        <img src={{image}}><br>
-        <div class="car-break"></div>
+            {{#unless hidden}}
+                Your favorite new car is a....<br>
+                {{year}} {{make}} {{model}}<br>
+                {{color}} {{type}}<br>
+                Mileage: {{mileage}}<br>
+                Asking Price: ${{price}}<br>
+                <img src={{image}}><br>
+                <div class="car-break"></div>
+            {{/unless}}
         {{/each}}
 </div>
 

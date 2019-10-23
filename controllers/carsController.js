@@ -1,19 +1,22 @@
+// *****************************************************************************
+// **** api-routes.js - this file offers a set of routes for displaying and
+// saving data to the db
+// ******************************************************************************
+// *** Dependencies
+
+// Requiring our models
 var db = require("../models");
 
+
+
+// Routes =============================================================
 module.exports = function (app) {
 
-  app.get("/", function (req, res) {
-    // findAll returns all entries for a table when used with no options
-    db.Cars.findAll({}).then(function (dbCars) {
-      // We have access to the cars as an argument inside of the callback function
-      var carOb = {
-        cars: dbCars.slice(0, 4)
-      }
-      console.log(carOb)
-      res.render("index", carOb);
-
-    });
+  //index page:
+  app.get('/', function (req, res) {
+    res.render('index', { layout: 'main.handlebars' });
   });
+
 
   // GET route for getting all of the cars
   app.get("/inventory", function (req, res) {
@@ -23,21 +26,9 @@ module.exports = function (app) {
       var carOb = {
         cars: dbCars
       }
-      console.log(carOb)
+      // console.log(carOb)
+      // res.json(carOb)
       res.render("inventory", carOb);
-
-    });
-  });
-
-  app.get("/userprofile", function (req, res) {
-    // findAll returns all entries for a table when used with no options
-    db.Cars.findAll({}).then(function (dbCars) {
-      // We have access to the cars as an argument inside of the callback function
-      // var carOb = {
-      //   cars: dbCars
-      // }
-      //   console.log(carOb)
-      res.render("profile2", { layout: "main.handlebars" });
     });
   });
 
@@ -46,56 +37,76 @@ module.exports = function (app) {
     // findAll returns all entries for a table when used with no options
     db.Cars.findAll({}).then(function (dbCars) {
       // We have access to the cars as an argument inside of the callback function
-      var dbCars = {
-        cars: dbCars
-      }
+      // var dbCars = {
+      //   cars: dbCars
+      // }
       console.log(dbCars)
       // res.json(dbCars)
-      res.render("index", dbCars);
+      res.render("profile", dbCars);
+    });
+  });
+
+  //this is the get to have the user go from log in to profile page.
+  app.get("/login/profile", function (req, res) {
+
+    db.Cars.findAll({}).then(function (dbCars) {
+
+      console.log(dbCars)
+
+      res.render("profile2", dbCars);
+    });
+  });
+
+  app.get("/login/signup", function (req, res) {
+
+    db.Cars.findAll({}).then(function (dbCars) {
+
+      console.log(dbCars)
+
+      res.render("signup", dbCars);
+    });
+  });
+
+  app.get("/signup", function (req, res) {
+
+    db.Cars.findAll({}).then(function (dbCars) {
+
+
+      console.log(dbCars)
+
+      res.render("main", dbCars);
     });
   });
 
   //render user page
-  app.get("/postcar", function (req, res) {
-    res.render("postcar", { layout: "main.handlebars" });
+  app.get('/postcar', function (req, res) {
+    res.render('postcar', { layout: 'main.handlebars' });
   });
 
-  app.get("/carma_sutra", function (req, res) {
-    // findAll returns all entries for a table when used with no options
-    db.Cars.findAll({}).then(function (dbCars) {
-      // We have access to the cars as an argument inside of the callback function
-      var secretOb = {
-        cars: dbCars
-      }
-      console.log(secretOb)
-      res.render("secret", secretOb);
-    });
-  });
+  // // POST route for saving a new todo
+  // app.post("/api/newcars", function (req, res) {
+  //   // create takes an argument of an object describing the item we want to insert
+  //   // into our table. In this case we just we pass in an object with a text and
+  //   // complete property
+  //   db.Cars.create({
+  //     model: req.body.model,
+  //     make: req.body.make,
+  //     year: req.body.year,
+  //     mileage: req.body.mileage,
+  //     type: req.body.type,
+  //     color: req.body.color,
+  //     price: req.body.price,
+  //     image: req.body.image,
+  //     hidden: req.body.hidden
+  //   }).then(function (dbCars) {
+  //     // We have access to the new todo as an argument inside of the callback function
+  //     res.json(dbCars);
+  //   }).catch(function (err) {
+  //     console.log(err.message)
+  //     res.send(err.message)
+  //   });
 
-  // POST route for saving a new todo
-  app.post("/api/newcars", function (req, res) {
-    // create takes an argument of an object describing the item we want to insert
-    // into our table. In this case we just we pass in an object with a text and
-    // complete property
-    db.Cars.create({
-      model: req.body.model,
-      make: req.body.make,
-      year: req.body.year,
-      mileage: req.body.mileage,
-      type: req.body.type,
-      color: req.body.color,
-      price: req.body.price,
-      image: req.body.image,
-      hidden: req.body.hidden
-    }).then(function (dbCars) {
-      // We have access to the new todo as an argument inside of the callback function
-      res.json(dbCars);
-    }).catch(function (err) {
-      console.log(err.message)
-      res.send(err.message)
-    });
-
-  });
+  // });
 
   // DELETE route for deleting cars. We can get the id of the todo to be deleted
   // from req.params.id
@@ -133,47 +144,63 @@ module.exports = function (app) {
       .then(function (dbCars) {
         res.json(dbCars);
       });
+
   });
 
-  app.get("/auction", function(req, res) {
-    db.Cars.findAll({}).then(function(dbCars) {
-      var dbCars = {
+  //render user page
+  app.get("/postcar/:id", function (req, res) {
+    res.render("postcar", { layout: "main.handlebars" });
+  });
+
+  app.get("/carma_sutra", function (req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Cars.findAll({}).then(function (dbCars) {
+      // We have access to the cars as an argument inside of the callback function
+      var secretOb = {
         cars: dbCars
       }
-      console.log(dbCars)
-      // res.json(dbCars)
-      res.render("auction", dbCars);
+      console.log(secretOb)
+      res.render("secret", secretOb);
     });
   });
-  app.put("/api/auction/update/:id", function (req, res) {
-    db.Cars.update({
-      bid: req.body.bid,
-      currentBidder: req.body.currentBidder
-    }, {
-      where: {
-        id: req.params.id
-      }
-    })
-      .then(function (dbCars) {
-        res.json(dbCars);
-      });
-  });
-  
-  app.get("/api/makeauction/:id", function(req, res){
-    db.Cars.update({ auction: true}, {
-      where: {
-        id: req.params.id
-      }
-    })
-})
 
-app.post("/api/auction", function(req,res) {
-  db.Cars.update({
-    bid: req.body.bid,
-    currentBidder: req.body.currentBidder,
-    where: {
-      id: req.body.id
-    }
+
+  // POST route for saving a new car
+  app.post("/api/newcars", function (req, res) {
+    // create takes an argument of an object describing the item we want to insert
+    // into our table. In this case we just we pass in an object with a text and
+    // complete property
+    db.Cars.create({
+      model: req.body.model,
+      make: req.body.make,
+      year: req.body.year,
+      mileage: req.body.mileage,
+      type: req.body.type,
+      color: req.body.color,
+      price: req.body.price,
+      image: req.body.image,
+      hidden: req.body.hidden,
+      UserId: req.body.UserId
+
+    }).then(function (dbCars) {
+      // We have access to the new todo as an argument inside of the callback function
+      res.json(dbCars);
+    }).catch(function (err) {
+      console.log(err.message)
+      res.send(err.message)
+
+    });
+
+
+
+    //DELETE car from user profile page:
+    app.delete("/api/car/delete/:id", function (req, res) {
+      db.Cars.destroy({
+        where: { id: req.params.id }
+      }).then(function (data) {
+        res.json(data)
+      })
+    })
   })
-})
-};
+}
+

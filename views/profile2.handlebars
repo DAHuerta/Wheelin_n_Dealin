@@ -41,14 +41,26 @@
                     by
                     accident, sometimes on purpose (injected humour and the like).</p>
             </div>
-            <div class="profile-saved">
 
-            </div>
+
+            <h1>Your Posted Cars</h1>
+            <ul>
+                {{#each postedCars}}
+                Your favorite new car is a....<br>
+                {{year}} {{make}} {{model}}<br>
+                {{color}} {{type}}<br>
+                Mileage: {{mileage}}<br>
+                Asking Price: ${{price}}<br>
+                <img src={{image}}><br>
+                {{>updateDelete }}
+                {{/each}}
+            </ul>
         </div>
         <div class="col-md-2 profile-right">
             <div class="profile-links">
-                <a href="/carma_sutra"><button id="secret-menu-btn" class="btn btn-lg btn-light">Carma Sutra</button></a>
-                <a href="/postcar"><button id="sell-car-btn" class="btn btn-lg btn-light">Sell Your Car</button></a>
+                <a href="/carma_sutra"><button id="secret-menu-btn" class="btn btn-lg btn-light">Carma
+                        Sutra</button></a>
+                <button id="sell-car-btn" class="btn btn-lg btn-light">Sell Your Car</button>
             </div>
         </div>
     </div>
