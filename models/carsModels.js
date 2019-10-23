@@ -1,5 +1,63 @@
 
 
+// module.exports = function (sequelize, DataTypes) {
+//   var Cars = sequelize.define("Cars", {
+//     model: {
+//       type: DataTypes.STRING, allowNull: false
+//     },
+//     make: {
+//       type: DataTypes.STRING,
+//       allowNull: false
+//     },
+//     year: {
+//       type: DataTypes.INTEGER, allowNull: true
+//     },
+//     mileage: {
+//       type: DataTypes.INTEGER, allowNull: false
+//     },
+//     type: {
+//       type: DataTypes.STRING, allowNull: false, validate: {// notNull: true,
+//         // notEmpty: true,
+//         len: [1, 200]
+//       }
+//     },
+//     color: {
+//       type: DataTypes.STRING, allowNull: false
+//     },
+//     price: {
+//       type: DataTypes.STRING, allowNull: false
+//     },
+//     image: {
+//       type: DataTypes.TEXT, allowNull: true
+//     },
+//     hidden: {
+//       type: DataTypes.BOOLEAN, defaultValue: false
+//     }
+//     // auction: {
+//     //   type: DataTypes.BOOLEAN, defaultValue: false
+//     // },
+//     // bid: {
+//     //   type: DataTypes.INTEGER, allowNull: true
+//     // },
+//     // currentBidder: {
+//     //   type: DataTypes.STRING, allowNull: true
+//     // }
+//   }, {
+//     timestamps: false
+//   });
+  
+//   Cars.associate = function(models) {
+//     Cars.belongsTo(models.users, {
+//       foreignKey: {
+//         allowNull: true
+//       }
+//     })
+//   }
+//   return Cars;
+// };
+
+
+
 module.exports = function (sequelize, DataTypes) {
   var Cars = sequelize.define("Cars", {
     model: {
@@ -34,13 +92,13 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.BOOLEAN, defaultValue: false
     },
     auction: {
-      type: DataTypes.BOOLEAN, defaultValue: false
+    type: DataTypes.BOOLEAN, defaultValue: false
     },
     bid: {
-      type: DataTypes.INTEGER, allowNull: true
+    type: DataTypes.INTEGER, defaultValue: 0
     },
     currentBidder: {
-      type: DataTypes.STRING, allowNull: true
+    type: DataTypes.STRING, allowNull: true
     }
   }, {
     timestamps: false
@@ -58,3 +116,4 @@ module.exports = function (sequelize, DataTypes) {
 
   return Cars;
 };
+
