@@ -92,7 +92,7 @@ $(document).ready(function () {
     // $("#type-search").val("");
     // $("#color-search").val("");
     // $("#price-search").val("");
-    location.href=`/inventory/search`
+    location.href=`/inventory/search/`
   });
 
 });

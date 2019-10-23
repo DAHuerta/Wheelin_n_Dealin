@@ -72,35 +72,40 @@ module.exports = function (app) {
     res.render("search", { layout: "main.handlebars" })
   });
 
-  app.get("/inventory/search", function (req, res) {
+  app.get("/inventory/search/", function (req, res) {
     var filters = {};
     // destructuring the req.query object into individual variable names for ease of access
-    var { make, model, color, mileage } = req.query;
+    // var { make, model, color, mileage } = req.query;
+    var make = req.query.make
+    var model = req.query.model
+    
 
     // only include make in 'where' if user provides it!
     if (make) {
       filters.make = make;
-    }
+    };
 
     if (model) {
       filters.model = model;
-    }
+    };
 
-    if (color) {
-      filters.color = color;
-    }
+    // if (color) {
+    //   filters.color = color;
+    // };
 
-    if (mileage) {
-      filters.mileage = mileage;
-    }
+    // if (mileage) {
+    //   filters.mileage = mileage;
+    // };
 
-    console.log(filters.model)
+    console.log(model)
 
     db.Cars.findAll({
-      where: filters,
-    }).then(function (dbCars) {
+      where: {
+        make: req.query.make
+      }
+    }).then(function (carsearch) {
       var searchOb = {
-        cars: dbCars
+        cars: carsearch
       }
       res.render("searchresults", searchOb)
     })
