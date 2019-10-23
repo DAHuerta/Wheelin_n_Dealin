@@ -18,7 +18,6 @@ body {
 
 footer {
     background: black;
-    color: #e6e9ec;
     padding: 2rem;
     text-align: center;
     border-radius: 18px;
@@ -130,5 +129,6 @@ img {
 
 .card {
     color: black;
-    border-radius: 18px;;
+    border-radius: 18px;
+    ;
 }

@@ -8,74 +8,82 @@
 var db = require("../models");
 
 // Routes =============================================================
-module.exports = function(app) {
+module.exports = function (app) {
 
-  // GET route for getting all of the cars
-  app.get("/api/users", function(req, res) {
-    // findAll returns all entries for a table when used with no options
-    db.Users.findAll({}).then(function(dbUsers) {
-      // We have access to the cars as an argument inside of the callback function
-      res.json(dbUsers);
-    });
+
+  //link up to the new user signup page
+  app.get('/signup', function (req, res) {
+    res.render('notmember', { layout: 'main.handlebars' });
+  });
+  //link up to the profile page
+  app.get('/login', function (req, res) {
+    res.render('profile', { layout: 'main.handlebars' });
   });
 
-  //link up to the new user signup page 
 
-  // POST route for saving a new user
-  app.post("/api/users", function(req, res) {
-    // create takes an argument of an object describing the item we want to insert
-    // into our table. In this case we just we pass in an object with a text and
-    // complete property
-    db.Users.create({
-      user_name: req.body.name,
-      password: req.body.password,
-      favorite_color: req.body.favColor,
-      favorite_type: req.body.favType,
-      fav_make: req.body.favMake,
-      authorized: req.body.authorized
-    }).then(function(dbUsers) {
-      // We have access to the new todo as an argument inside of the callback function
-      res.json(dbUsers);
-    }).catch(function(err){
-      console.log(err.message)
-      res.send(err.message)
-    });
+  //post route to confirm username have not been taken:
+  app.post("/api/newuser", function (req, res) {
 
-  });
-
-  // DELETE route for deleting cars. We can get the id of the todo to be deleted
-  // from req.params.id
-  app.delete("/api/users/:id", function(req, res) {
-    // Destroy takes in one argument: a "where object describing the cars we want to destroy
-    db.Users.destroy({
-      where: {
-        id: req.params.id
+    db.Users.findAll({}).then(function (dbUser) {
+      for (var i = 0; i < dbUser.length; i++) {
+        if (req.body.email === dbUser[i].user_name) {
+          // console.log(res.json(`user: true`).end())
+          return res.json(`old`).end()
+        }
       }
-    })
-      .then(function(dbUsers) {
-        res.json(dbUsers);
-      });
-
-  });
-  // PUT route for updating cars. We can get the updated todo data from req.body
-  app.put("/api/users/update/:id", function(req, res) {
-    // Update takes in two arguments, an object describing the properties we want to update,
-    // and another "where" object describing the cars we want to update
-    db.Todo.update({
-        user_name: req.body.name,
+      // create takes an argument of an object describing the item we want to insert
+      // into our table. In this case we just we pass in an object with a text and
+      // complete property
+      db.Users.create({
+        user_name: req.body.email,
         password: req.body.password,
-        favorite_color: req.body.favColor,
-        favorite_type: req.body.favType,
-        fav_make: req.body.favMake,
-        authorized: req.body.authorized
-    }, {
-      where: {
-        id: req.params.id
-      }
-    })
-      .then(function(dbUsers) {
-        res.json(dbUsers);
+      }).then(function (dbUsers) {
+        // We have access to the new todo as an argument inside of the callback function
+        console.log(dbUsers)
+        res.json(`new`).end();
+      }).catch(function (err) {
+        console.log(err.message)
+        res.send(err.message)
       });
-  });
+    })
+  })
 
+  //link up to the login page:
+  // app.get('/login', function (req, res) {
+  //   res.render('login', { layout: 'main.handlebars' });
+  // });
+
+  //get route for checking if user exist:
+  app.post("/api/login", function (req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Users.findAll({}).then(function (dbUser) {
+      // console.log(req.body.user_name)
+      // We have access to the cars as an argument inside of the callback function
+      for (var i = 0; i < dbUser.length; i++) {
+        if (req.body.email === dbUser[i].user_name && req.body.password === dbUser[i].password) {
+          // console.log(dbUser)
+          console.log(dbUser[i].id)
+          return res.json(dbUser[i]).end()
+        }
+      }
+      res.json(`notLogin`).end()
+    })
+  })
+
+
+  //get route for user profile page
+  app.get("/userprofile/:id", function(req, res){
+    db.Users.findOne({ 
+      where: 
+      {id: req.params.id},
+      include: [db.Cars]
+    }).then(function(data){
+      // res.json(data.Cars)
+      var userCar = {
+        userCar: data.cars
+      }
+      res.render("profile2", userCar);
+    })
+  })
 };
+
