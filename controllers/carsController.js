@@ -2,12 +2,18 @@ var db = require("../models");
 
 // Routes =============================================================
 module.exports = function (app) {
-
   //index page:
   app.get('/', function (req, res) {
-    res.render('index', { layout: 'main.handlebars' });
+    // findAll returns all entries for a table when used with no options
+    db.Cars.findAll({}).then(function (dbCars) {
+      // We have access to the cars as an argument inside of the callback function
+      var carOb = {
+        cars: dbCars.slice(0, 4)
+      }
+      console.log(carOb)
+      res.render("inventory", carOb);
+    });
   });
-
 
   // GET route for getting all of the cars
   app.get("/inventory", function (req, res) {
@@ -245,4 +251,4 @@ module.exports = function (app) {
       })
     })
   })
-}
+};
