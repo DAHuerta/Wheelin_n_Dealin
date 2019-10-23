@@ -75,9 +75,14 @@ $(document).ready(function () {
     location.href=`/inventory/search?model=${searchCar.model}&make=&${searchCar.make}&color=${searchCar.color}&type=${searchCar.type}&year=${searchCar.year}`
   });
 
-  var $newCarInput = $("#input-new-car");
+  $("#search-again").on("click", function (event){
+    event.preventDefault();
+    location.href=`/vehicle_search`
+  })
 
-  var $newCarContainer = $("#car-container")
+  // var $newCarInput = $("#input-new-car");
+
+  // var $newCarContainer = $("#car-container")
 
   $("#update-cars").on("click", function () {
     updateCars()
@@ -105,59 +110,6 @@ $(document).ready(function () {
     var id = window.location.href.split("userprofile/")[1];
     window.location = "/postcar/" + id;
   })
-
-
-  //add new cars using user year:
-  // when user clicks add-btn
-  $("#add-btn").on("click", function (event) {
-    event.preventDefault();
-    var id = window.location.href.split("postcar/")[1];
-    // make a newCar obj
-    var newCar = {
-      // model from model input
-      model: $("#model").val().trim(),
-      // make from make input
-      make: $("#make").val().trim(),
-      // year from year input
-      year: $("#year").val().trim(),
-      // mile from mileage input
-      mileage: $("#mileage").val().trim(),
-      // type from type input
-      type: $("#type").val().trim(),
-      // color from color input
-      color: $("#color").val().trim(),
-      // price from price input
-      price: $("#price").val().trim(),
-      // image from image input
-      image: $("#image").val().trim(),
-      // hidden from hidden input. true of false
-      hidden: $("#hidden").val().trim(),
-      UserId: id
-    };
-
-    // send an AJAX POST-request with jQuery
-    $.post("/api/newcars", newCar)
-      // on success, run this callback
-      .then(function (data) {
-        // log the data we found
-        console.log(data);
-        // tell the user we're adding a character with an alert window
-        alert("Adding car...");
-        location.reload();
-      });
-
-    // empty each input box by replacing the value with an empty string
-    $("#model").val("");
-    $("#make").val("");
-    $("#year").val("");
-    $("#mileage").val("");
-    $("#type").val("");
-    $("#color").val("");
-    $("#price").val("");
-    $("#image").val("");
-    $("#hidden").val("");
-  });
-
 
   //user sign up:
   $("#signup-btn").on("click", function (event) {
@@ -231,7 +183,6 @@ $(document).ready(function () {
     })
   })
 });
-
 
 // $.ajax({
 //   method: "DELETE",
