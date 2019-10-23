@@ -17,13 +17,13 @@ $(document).ready(function () {
     console.log("secret menu")
   });
 
-  function updateCars(cars) {
-    $.ajax({
-      method: "PUT",
-      url: "/api/cars",
-      data: cars
-    }).then(getTodos);
-  };
+  // function updateCars(cars) {
+  //   $.ajax({
+  //     method: "PUT",
+  //     url: "/api/cars",
+  //     data: cars
+  //   }).then(getTodos);
+  // };
 
   //reroute to /post/:id when click on sell your car
   $("#sell-car-btn").on("click", function(){
@@ -157,10 +157,3 @@ $(document).ready(function () {
     })
   })
 });
-
-
-// $.ajax({
-//   method: "DELETE",
-//   url: "/api/authors/" + id
-// })
-//   .then(getAuthors);
