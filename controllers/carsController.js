@@ -26,9 +26,9 @@ module.exports = function (app) {
       var carOb = {
         cars: dbCars
       }
-      console.log(carOb)
-      res.render("index", carOb);
-
+      // console.log(carOb)
+      // res.json(carOb)
+      res.render("inventory", carOb);
     });
   });
 
