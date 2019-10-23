@@ -27,7 +27,9 @@ $(document).ready(function () {
 
   //reroute to /post/:id when click on sell your car
   $("#sell-car-btn").on("click", function(){
-    console.log(window.location.href)
+    console.log(window.location.href.split("/:")[1])
+    var id = window.location.href.split("userprofile/")[1];
+    window.location = "/postcar/" + id;
   })
 
 
@@ -35,6 +37,7 @@ $(document).ready(function () {
   // when user clicks add-btn
   $("#add-btn").on("click", function (event) {
     event.preventDefault();
+    var id = window.location.href.split("postcar/")[1];
     // make a newCar obj
     var newCar = {
       // model from model input
@@ -55,6 +58,7 @@ $(document).ready(function () {
       image: $("#image").val().trim(),
       // hidden from hidden input. true of false
       hidden: $("#hidden").val().trim(),
+      UserId: id
     };
 
     // send an AJAX POST-request with jQuery
@@ -65,6 +69,7 @@ $(document).ready(function () {
         console.log(data);
         // tell the user we're adding a character with an alert window
         alert("Adding car...");
+        location.reload();
       });
 
     // empty each input box by replacing the value with an empty string
@@ -129,7 +134,7 @@ $(document).ready(function () {
       } else {
         // console.log(data.user_name)
         alert(`welcome ${data.user_name}`)
-        window.location = `/userprofile/:${data.id}`
+        window.location = `/userprofile/${data.id}`
         //redirect to profile page. look at burgerJS for hints
       }
     })
