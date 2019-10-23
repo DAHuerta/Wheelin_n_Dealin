@@ -27,7 +27,7 @@ module.exports = function (app) {
       res.render("inventory", carOb);
     });
   });
-  
+
   app.get("/userprofile/:id", function (req, res) {
     db.Cars.findAll({
       where: {
@@ -72,34 +72,70 @@ module.exports = function (app) {
     res.render("search", { layout: "main.handlebars" })
   });
 
-  app.get("/inventory/:model", function (req, res) {
-    var model = req.params.model
-    console.log(model)
+  app.get("/inventory", function (req, res) {
+    var filters = {};
+    // destructuring the req.query object into individual variable names for ease of access
+    var { make, model, color, mileage } = req.query;
+
+    // only include make in 'where' if user provides it!
+    if (make) {
+      filters.make = make;
+    }
+
+    if (model) {
+      filters.model = model;
+    }
+
+    if (color) {
+      filters.color = color;
+    }
+
+    if (mileage) {
+      filters.mileage = mileage;
+    }
 
     db.Cars.findAll({
-      where: {
-        model,
-        // make: req.body.make,
-        // mileage: req.body.mileage,
-        // type: req.body.type,
-        // color: req.body.color,
-        // price: req.body.price,
-      }
-    }).then(function (dbCars) {
-        var dataOb = {
-          cars: dbCars
-        }
-      console.log(dataOb)
-      res.render("index", dataOb)
+
+    }).then(function (filters) {
+      // var dataOb = {
+      //   cars: dbCars
+      // }
+      console.log(filters)
+      res.render("index", filters)
     })
   });
 
-  // app.get("/user/search", function (req, res) {
-  //   res.render("search", req)
+  //====
+  // empty object of filters -- we'll add key/val pairs here only if the user supplied values in the form 
+  // var filters = {};
+
+  // // destructuring the req.query object into individual variable names for ease of access
+  // var { make, model, color, etc } = req.query;
+
+  // // only include make in 'where' if user provides it!
+  // if (make) {
+  //   filters.make = make;
   // }
 
-  // req.query.model
-  // var {bla} = req.query 
+  // if (model) {
+  //   filters.model = model;
+  // }
+
+  // if (color) {
+  //   filters.color = color;
+  // }
+
+  // // is mileage special? because it's a range??? look into Sequelize ranges, maybe
+  // if (mileage) {
+  //   filters.mileage = mileage;
+  // }
+
+  // db.Car.findAll({
+  //   where: filters // feeding in an object of user-specified filters
+  // }).then(function (cars) {
+  //   res.render("templateName", dataObjName);
+  // })
+  //=====
 
 
   // POST route for saving a new todo
