@@ -54,6 +54,14 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/carma_sutra", function (req, res) {
+    db.Cars.findAll({}).then(function (dbCars) {
+      var secretOb = {
+        cars: dbCars
+      }
+      res.render("secret", secretOb)
+    })
+  })
   //this is the get to have the user go from log in to profile page.
   app.get("/login/profile", function (req, res) {
 

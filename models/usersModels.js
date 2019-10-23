@@ -50,13 +50,13 @@ module.exports = function(sequelize, DataTypes) {
     timestamps: false
   });
 
-  // Users.associate = function(models) {
-  //   // Associating Author with Posts
-  //   // When an Author is deleted, also delete any associated Posts
-  //   Users.hasMany(models.Cars, {
-  //     onDelete: "cascade"
-  //   });
-  // };
+  Users.associate = function(models) {
+    // Associating Author with Posts
+    // When an Author is deleted, also delete any associated Posts
+    Users.hasMany(models.Cars, {
+      onDelete: "cascade"
+    });
+  };
 
   return Users;
 };
