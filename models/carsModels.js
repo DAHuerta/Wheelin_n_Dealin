@@ -32,6 +32,15 @@ module.exports = function (sequelize, DataTypes) {
     },
     hidden: {
       type: DataTypes.BOOLEAN, defaultValue: false
+    },
+    auction: {
+      type: DataTypes.BOOLEAN, defaultValue: false
+    },
+    bid: {
+      type: DataTypes.INTEGER, allowNull: true
+    },
+    currentBidder: {
+      type: DataTypes.STRING, allowNull: true
     }
   }, {
     timestamps: false

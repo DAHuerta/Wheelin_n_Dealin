@@ -73,4 +73,22 @@ $("#add-btn").on("click", function(event) {
   $("#hidden").val("");
 });
 
+$("#submit").on("click", function(event) {
+  event.preventDefault();
+
+  var newBidder = {
+    bid: $("#bid").val().trim(),
+    // hidden from hidden input. true of false
+    bidder: $("#bidder").val().trim(),
+    id: $("#auctionId").data("value")
+  };
+
+  $.post("/api/auction", newBidder)
+  .then(function(data) {
+    console.log(data);
+    alert("Added bid");
+  });
+
+});
+
 });

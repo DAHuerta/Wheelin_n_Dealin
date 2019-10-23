@@ -1,3 +1,4 @@
+-- Extra Cars
 ("Silverado", "Chevy", 2019, 2,366, "Truck", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
 ("Silverado", "Chevy", 2010, 55,422, "Truck", "Gray", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
 ("Silverado", "Chevy", 2009, 62,743, "Truck", "Green", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
@@ -69,3 +70,23 @@
 ("Wrangler", "Jeep", 2007, 75,729, "SUV", "Black", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
 ("Cherokee", "Jeep", 2000, 123,119, "SUV", "Gray", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"),
 ("Cherokee", "Jeep", 2001, 103,833, "SUV", "White", "https://i1.sndcdn.com/artworks-000352742106-a19gt5-t500x500.jpg"), 
+
+-- Extra Hidden Menu
+("F-22 Raptor", "Lockheed Martin", NULL, NULL, "Fighter Jet", "Gray", 150000000, "http://images-cdn.dashdigital.com/modelaviation/march_2019/data/articles/img/048.jpg", true), 
+("F-22 Raptor", "Lockheed Martin", NULL, NULL, "Fighter Jet", "Gray", 150000000, "http://images-cdn.dashdigital.com/modelaviation/march_2019/data/articles/img/048.jpg", true), 
+("F-22 Raptor", "Lockheed Martin", NULL, NULL, "Fighter Jet", "Gray", 150000000, "http://images-cdn.dashdigital.com/modelaviation/march_2019/data/articles/img/048.jpg", true), 
+("F-22 Raptor", "Lockheed Martin", NULL, NULL, "Fighter Jet", "Gray", 150000000, "http://images-cdn.dashdigital.com/modelaviation/march_2019/data/articles/img/048.jpg", true), 
+("F-22 Raptor", "Lockheed Martin", NULL, NULL, "Fighter Jet", "Gray", 150000000, "http://images-cdn.dashdigital.com/modelaviation/march_2019/data/articles/img/048.jpg", true), 
+("F-22 Raptor", "Lockheed Martin", NULL, NULL, "Fighter Jet", "Gray", 150000000, "http://images-cdn.dashdigital.com/modelaviation/march_2019/data/articles/img/048.jpg", true), 
+("F-22 Raptor", "Lockheed Martin", NULL, NULL, "Fighter Jet", "Gray", 150000000, "http://images-cdn.dashdigital.com/modelaviation/march_2019/data/articles/img/048.jpg", true), 
+("F-22 Raptor", "Lockheed Martin", NULL, NULL, "Fighter Jet", "Gray", 150000000, "http://images-cdn.dashdigital.com/modelaviation/march_2019/data/articles/img/048.jpg", true), 
+("F-22 Raptor", "Lockheed Martin", NULL, NULL, "Fighter Jet", "Gray", 150000000, "http://images-cdn.dashdigital.com/modelaviation/march_2019/data/articles/img/048.jpg", true), 
+("F-22 Raptor", "Lockheed Martin", NULL, NULL, "Fighter Jet", "Gray", 150000000, "http://images-cdn.dashdigital.com/modelaviation/march_2019/data/articles/img/048.jpg", true), 
+("F-22 Raptor", "Lockheed Martin", NULL, NULL, "Fighter Jet", "Gray", 150000000, "http://images-cdn.dashdigital.com/modelaviation/march_2019/data/articles/img/048.jpg", true), 
+("F-22 Raptor", "Lockheed Martin", NULL, NULL, "Fighter Jet", "Gray", 150000000, "http://images-cdn.dashdigital.com/modelaviation/march_2019/data/articles/img/048.jpg", true), 
+("F-22 Raptor", "Lockheed Martin", NULL, NULL, "Fighter Jet", "Gray", 150000000, "http://images-cdn.dashdigital.com/modelaviation/march_2019/data/articles/img/048.jpg", true), 
+("F-22 Raptor", "Lockheed Martin", NULL, NULL, "Fighter Jet", "Gray", 150000000, "http://images-cdn.dashdigital.com/modelaviation/march_2019/data/articles/img/048.jpg", true), 
+("F-22 Raptor", "Lockheed Martin", NULL, NULL, "Fighter Jet", "Gray", 150000000, "http://images-cdn.dashdigital.com/modelaviation/march_2019/data/articles/img/048.jpg", true), 
+("F-22 Raptor", "Lockheed Martin", NULL, NULL, "Fighter Jet", "Gray", 150000000, "http://images-cdn.dashdigital.com/modelaviation/march_2019/data/articles/img/048.jpg", true), 
+("F-22 Raptor", "Lockheed Martin", NULL, NULL, "Fighter Jet", "Gray", 150000000, "http://images-cdn.dashdigital.com/modelaviation/march_2019/data/articles/img/048.jpg", true), 
+© 2019 GitHub, Inc.

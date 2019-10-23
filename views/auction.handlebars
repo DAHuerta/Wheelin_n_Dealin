@@ -1,0 +1,23 @@
+<ul>
+
+<li>
+	{{#each cars}}
+    {{#if auction}}<br>
+    Model: {{model}}<br>
+    Make: {{make}}<br>
+    Year: {{year}}<br>
+    Color: {{color}}<br>
+    <img src={{image}}><br>
+    bid: ${{bid}}<br>
+    currentBidder: {{currentBidder}}<br>
+    <form>
+        <input type="number" id="bid"></input>
+        <input type="text" id="bidder"></input>
+        <button id="auctionId" data-value="{{id}}">Submit!</button>
+    </form>
+    {{/if}}
+    {{/each}}
+
+</li>
+
+</ul>

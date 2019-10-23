@@ -135,4 +135,45 @@ module.exports = function (app) {
       });
   });
 
+  app.get("/auction", function(req, res) {
+    db.Cars.findAll({}).then(function(dbCars) {
+      var dbCars = {
+        cars: dbCars
+      }
+      console.log(dbCars)
+      // res.json(dbCars)
+      res.render("auction", dbCars);
+    });
+  });
+  app.put("/api/auction/update/:id", function (req, res) {
+    db.Cars.update({
+      bid: req.body.bid,
+      currentBidder: req.body.currentBidder
+    }, {
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function (dbCars) {
+        res.json(dbCars);
+      });
+  });
+  
+  app.get("/api/makeauction/:id", function(req, res){
+    db.Cars.update({ auction: true}, {
+      where: {
+        id: req.params.id
+      }
+    })
+})
+
+app.post("/api/auction", function(req,res) {
+  db.Cars.update({
+    bid: req.body.bid,
+    currentBidder: req.body.currentBidder,
+    where: {
+      id: req.body.id
+    }
+  })
+})
 };
