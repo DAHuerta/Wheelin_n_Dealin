@@ -72,16 +72,18 @@ module.exports = function (app) {
 
 
   //get route for user profile page
-  app.get("/user/profile/:id", function(req, res){
+  app.get("/userprofile/:id", function(req, res){
     db.Users.findOne({ 
       where: 
-      {id: req.params.id}
+      {id: req.params.id},
+      include: [db.Cars]
     }).then(function(data){
-      res.json(data)
+      // res.json(data.Cars)
+      var userCar = {
+        userCar: data.cars
+      }
+      res.render("profile2", userCar);
     })
   })
-
-
-
 };
 

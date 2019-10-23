@@ -29,17 +29,17 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/userprofile/:userid", function (req, res) {
-    // findAll returns all entries for a table when used with no options
-    db.Cars.findAll({}).then(function (dbCars) {
-      // We have access to the cars as an argument inside of the callback function
-      // var carOb = {
-      //   cars: dbCars
-      // }
-      //   console.log(carOb)
-      res.render("profile2", { layout: "main.handlebars" });
-    });
-  });
+  // app.get("/userprofile/:userid", function (req, res) {
+  //   // findAll returns all entries for a table when used with no options
+  //   db.Cars.findAll({}).then(function (dbCars) {
+  //     // We have access to the cars as an argument inside of the callback function
+  //     // var carOb = {
+  //     //   cars: dbCars
+  //     // }
+  //     //   console.log(carOb)
+  //     res.render("profile2", { layout: "main.handlebars" });
+  //   });
+  // });
 
 
   //render user page
@@ -75,6 +75,7 @@ module.exports = function (app) {
       price: req.body.price,
       image: req.body.image,
       hidden: req.body.hidden,
+      UserId: req.body.UserId
 
     }).then(function (dbCars) {
       // We have access to the new todo as an argument inside of the callback function
