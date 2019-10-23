@@ -45,8 +45,6 @@ module.exports = function (app) {
         console.log(err.message)
         res.send(err.message)
       });
-
-
     })
   })
 
@@ -62,9 +60,9 @@ module.exports = function (app) {
       // console.log(req.body.user_name)
       // We have access to the cars as an argument inside of the callback function
       for (var i = 0; i < dbUser.length; i++) {
-        console.log(dbUser[i].user_name)
         if (req.body.email === dbUser[i].user_name && req.body.password === dbUser[i].password) {
           // console.log(dbUser)
+          console.log(dbUser[i].id)
           return res.json(dbUser[i]).end()
         }
       }
@@ -74,14 +72,16 @@ module.exports = function (app) {
 
 
   //get route for user profile page
-  app.get("/user/profile/:username", function(req, res){
+  app.get("/user/profile/:id", function(req, res){
     db.Users.findOne({ 
       where: 
-      {user_name: req.params.username}
+      {id: req.params.id}
     }).then(function(data){
       res.json(data)
     })
   })
+
+
 
 };
 
