@@ -1,18 +1,22 @@
-<div class="body">
-    <p>Holding Place for welcome information</p>
+<div class="body-home">
+    <p>Welcome to Wheelin' N Dealin'</p>
+    <p>Our marketplace specializes in putting you into your next dream car, truck or SUV!</p>
+    <p>Below you can see a sample of our current inventory, or scroll to the bottom to see information about our current
+        vehicle lottery!</p>
+    <p>If you've shopped with us before, we encourage you to log in to the website and update your profile with your
+        perferences. If this is your first time visiting, feel free to visit our current listings as a guest, or sign up
+        with us today to gain access to the very best features here at Wheelin' N Dealin'</p>
 </div>
 
 <div class="car-show">
-    <p>Holding Place for intial cars that will be rendered on page</p>
+    <p>See a sample of our Fall 2019 inventory below!</p>
+    <div class="car-break"></div>
     {{#each cars}}
-    Model: {{model}}
-    Make: {{make}}
-    Year: {{year}}
-    Mileage: {{mileage}}
-    Type: {{type}}
-    Color: ${{color}}
-    Price: {{price}}
-    <img src={{image}}>
+    {{year}} {{make}} {{model}}<br>
+    {{color}} {{type}}<br>
+    Mileage: {{mileage}}<br>
+    Asking Price: ${{price}}<br>
+    <img src={{image}}><br>
     <div class="car-break"></div>
     {{/each}}
 </div>
