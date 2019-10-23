@@ -16,28 +16,39 @@ module.exports = function (app) {
     res.render('notmember', { layout: 'main.handlebars' });
   });
   //link up to the profile page
-  app.get('/user/profile', function (req, res) {
+  app.get('/login', function (req, res) {
     res.render('profile', { layout: 'main.handlebars' });
   });
 
-  // POST route for saving a new user
-  app.post("/api/newuser", function (req, res) {
-    // create takes an argument of an object describing the item we want to insert
-    // into our table. In this case we just we pass in an object with a text and
-    // complete property
-    db.Users.create({
-      user_name: req.body.email,
-      password: req.body.password,
-    }).then(function (dbUsers) {
-      // We have access to the new todo as an argument inside of the callback function
-      console.log(dbUsers)
-      res.json(dbUsers);
-    }).catch(function (err) {
-      console.log(err.message)
-      res.send(err.message)
-    });
 
-  });
+  //post route to confirm username have not been taken:
+  app.post("/api/newuser", function (req, res) {
+
+    db.Users.findAll({}).then(function (dbUser) {
+      for (var i = 0; i < dbUser.length; i++) {
+        if (req.body.email === dbUser[i].user_name) {
+          // console.log(res.json(`user: true`).end())
+          return res.json(`old`).end()
+        }
+      }
+      // create takes an argument of an object describing the item we want to insert
+      // into our table. In this case we just we pass in an object with a text and
+      // complete property
+      db.Users.create({
+        user_name: req.body.email,
+        password: req.body.password,
+      }).then(function (dbUsers) {
+        // We have access to the new todo as an argument inside of the callback function
+        console.log(dbUsers)
+        res.json(`new`).end();
+      }).catch(function (err) {
+        console.log(err.message)
+        res.send(err.message)
+      });
+
+
+    })
+  })
 
   //link up to the login page:
   // app.get('/login', function (req, res) {
@@ -45,24 +56,31 @@ module.exports = function (app) {
   // });
 
   //get route for checking if user exist:
-  app.get("/api/login", function (req, res) {
+  app.post("/api/login", function (req, res) {
     // findAll returns all entries for a table when used with no options
     db.Users.findAll({}).then(function (dbUser) {
-      console.log(req.body.user_name)
-      console.log(dbUser[0].user_name)
-      res.json(dbUser)
+      // console.log(req.body.user_name)
       // We have access to the cars as an argument inside of the callback function
       for (var i = 0; i < dbUser.length; i++) {
-        if (req.body.user_name === dbUser[i].user_name && req.body.password === dbUser[i].password) {
-          //do something here
-          console.log(`user's data: ${dbUser[i]}`)
-          res.json(dbUser[i])
-        } else {
-          res.status(404).end()
+        console.log(dbUser[i].user_name)
+        if (req.body.email === dbUser[i].user_name && req.body.password === dbUser[i].password) {
+          // console.log(dbUser)
+          return res.json(dbUser[i]).end()
         }
       }
+      res.json(`notLogin`).end()
     })
+  })
 
+
+  //get route for user profile page
+  app.get("/user/profile/:username", function(req, res){
+    db.Users.findOne({ 
+      where: 
+      {user_name: req.params.username}
+    }).then(function(data){
+      res.json(data)
+    })
   })
 
 };

@@ -95,10 +95,15 @@ $("#add-btn").on("click", function(event) {
 
     $.post("/api/newuser", newUser)
     .then(function(data){
-    
       //redirect to user profile page after getting data back from controller
-      alert(`user profile successfully created. Please login to access profile`)
-      window.location = "/user/profile"
+      console.log(data)
+      if (data === "old"){
+        alert(`There is already a user with this email address`)
+        location.reload()
+      }else if(data === "new"){
+        alert(`User profile successfully created. Please login.`)
+        window.location = "/user/profile"
+      }
     })
   })
 
@@ -111,8 +116,16 @@ $("#add-btn").on("click", function(event) {
       password: $("#password-login").val().trim()
     }
 
-    $.get("/api/login", loginInfo).then(function(data){
-      alert(`welcome ${data.user_name}`)
+    $.post("/api/login", loginInfo).done(function(data){
+      if(data === "notLogin"){
+        alert(`Incorrect username and password`)
+        location.reload();
+      }else{
+        console.log(data.user_name)
+        alert(`welcome ${data.user_name}`)
+        window.location = `/user/profile/:${data.user_name}`
+        //redirect to profile page. look at burgerJS for hints
+      }
     })
 
 
