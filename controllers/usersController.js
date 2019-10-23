@@ -78,12 +78,29 @@ module.exports = function (app) {
       {id: req.params.id},
       include: [db.Cars]
     }).then(function(data){
-      // res.json(data.Cars)
+      // console.log(data.Cars[0].id)
       var userCar = {
-        userCar: data.cars
+        postedCars: data.Cars
       }
+      // res.json(data)
+      // // console.log(data.Cars)
       res.render("profile2", userCar);
     })
   })
+
+    // // GET route for getting all of the cars
+    // app.get("/inventory", function (req, res) {
+    //   // findAll returns all entries for a table when used with no options
+    //   db.Cars.findAll({}).then(function (dbCars) {
+    //     // We have access to the cars as an argument inside of the callback function
+    //     var carOb = {
+    //       cars: dbCars
+    //     }
+    //     // console.log(carOb)
+    //     // res.json(dbCars)
+    //     res.render("inventory", carOb);
+  
+    //   });
+    // });
 };
 

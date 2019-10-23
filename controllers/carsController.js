@@ -23,24 +23,12 @@ module.exports = function (app) {
       var carOb = {
         cars: dbCars
       }
-      console.log(carOb)
+      // console.log(carOb)
+      // res.json(dbCars)
       res.render("inventory", carOb);
 
     });
   });
-
-  // app.get("/userprofile/:userid", function (req, res) {
-  //   // findAll returns all entries for a table when used with no options
-  //   db.Cars.findAll({}).then(function (dbCars) {
-  //     // We have access to the cars as an argument inside of the callback function
-  //     // var carOb = {
-  //     //   cars: dbCars
-  //     // }
-  //     //   console.log(carOb)
-  //     res.render("profile2", { layout: "main.handlebars" });
-  //   });
-  // });
-
 
   //render user page
   app.get("/postcar/:id", function (req, res) {
@@ -124,5 +112,15 @@ module.exports = function (app) {
         res.json(dbCars);
       });
   });
+
+
+  //DELETE car from user profile page:
+  app.delete("/api/car/delete/:id", function(req, res){
+    db.Cars.destroy({
+      where: {id: req.params.id}
+    }).then(function(data){
+      res.json(data)
+    })
+  })
 
 };
