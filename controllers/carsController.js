@@ -78,31 +78,6 @@ module.exports = function (app) {
     res.render('postcar', { layout: 'main.handlebars' });
   });
 
-  // POST route for saving a new todo
-  app.post("/api/newcars", function (req, res) {
-    // create takes an argument of an object describing the item we want to insert
-    // into our table. In this case we just we pass in an object with a text and
-    // complete property
-    db.Cars.create({
-      model: req.body.model,
-      make: req.body.make,
-      year: req.body.year,
-      mileage: req.body.mileage,
-      type: req.body.type,
-      color: req.body.color,
-      price: req.body.price,
-      image: req.body.image,
-      hidden: req.body.hidden
-    }).then(function (dbCars) {
-      // We have access to the new todo as an argument inside of the callback function
-      res.json(dbCars);
-    }).catch(function (err) {
-      // console.log(err.message)
-      res.send(err.message)
-    });
-
-  });
-
   // DELETE route for deleting cars. We can get the id of the todo to be deleted
   // from req.params.id
   app.delete("/api/cars/:id", function (req, res) {
