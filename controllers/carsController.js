@@ -27,7 +27,7 @@ module.exports = function (app) {
       res.render("inventory", carOb);
     });
   });
-
+  
   app.get("/userprofile/:id", function (req, res) {
     db.Cars.findAll({
       where: {
@@ -72,11 +72,12 @@ module.exports = function (app) {
     res.render("search", { layout: "main.handlebars" })
   })
 
-  app.post("/api/searchcars", function (req, res) {
+  app.get("/api/searchcars", function (req, res) {
+    var model = req.query.model
+
     db.Cars.findAll({
       where: {
-        model: req.body.model,
-        // make: req.body.make,
+        model,
         // make: req.body.make,
         // mileage: req.body.mileage,
         // type: req.body.type,
@@ -86,11 +87,15 @@ module.exports = function (app) {
     }).then(function (dbCars) {
       console.log(dbCars)
       res.json(dbCars);
-    }).catch(function (err) {
-      console.log(err.message)
-      res.send(err.message)
     })
   })
+
+  app.get("/user/search", function (req, res) {
+  
+  }
+
+  // req.query.model
+  // var {bla} = req.query 
 
 
   // POST route for saving a new todo

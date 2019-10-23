@@ -71,23 +71,24 @@ $(document).ready(function () {
       // image from image input
     };
     // send an AJAX POST-request with jQuery
-    $.post("/api/searchcars", searchCar)
+    $.get("/user/search", searchCar)
       // on success, run this callback
       .then(function (data) {
         // log the data we found
-        console.log(data);
+        console.log(data)
         // tell the user we're adding a character with an alert window
         alert("Searching for car...");
+        res.render("inventory", data)
       });
 
     // empty each input box by replacing the value with an empty string
-    $("#model").val("");
-    $("#make").val("");
-    $("#year").val("");
-    $("#mileage").val("");
-    $("#type").val("");
-    $("#color").val("");
-    $("#price").val("");
+    $("#model-search").val("");
+    $("#make-search").val("");
+    $("#year-search").val("");
+    $("#mileage-search").val("");
+    $("#type-search").val("");
+    $("#color-search").val("");
+    $("#price-search").val("");
   });
 
 });
