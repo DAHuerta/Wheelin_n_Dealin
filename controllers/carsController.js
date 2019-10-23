@@ -25,18 +25,15 @@ module.exports = function (app) {
       }
       console.log(carOb)
       res.render("inventory", carOb);
-
     });
   });
 
-  app.get("/userprofile", function (req, res) {
-    // findAll returns all entries for a table when used with no options
-    db.Cars.findAll({}).then(function (dbCars) {
-      // We have access to the cars as an argument inside of the callback function
-      // var carOb = {
-      //   cars: dbCars
-      // }
-      //   console.log(carOb)
+  app.get("/userprofile/:id", function (req, res) {
+    db.Cars.findAll({
+      where: {
+        UserId: req.params.id
+      }
+    }).then(function (dbCars) {
       res.render("profile2", { layout: "main.handlebars" });
     });
   });
@@ -49,7 +46,6 @@ module.exports = function (app) {
       var dbCars = {
         cars: dbCars
       }
-      console.log(dbCars)
       // res.json(dbCars)
       res.render("index", dbCars);
     });
@@ -72,6 +68,31 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/vehicle_search", function (req, res) {
+    res.render("search", { layout: "main.handlebars" })
+  })
+
+  app.post("/api/searchcars", function (req, res) {
+    db.Cars.findAll({
+      where: {
+        model: req.body.model,
+        // make: req.body.make,
+        // make: req.body.make,
+        // mileage: req.body.mileage,
+        // type: req.body.type,
+        // color: req.body.color,
+        // price: req.body.price,
+      }
+    }).then(function (dbCars) {
+      console.log(dbCars)
+      res.json(dbCars);
+    }).catch(function (err) {
+      console.log(err.message)
+      res.send(err.message)
+    })
+  })
+
+
   // POST route for saving a new todo
   app.post("/api/newcars", function (req, res) {
     // create takes an argument of an object describing the item we want to insert
@@ -80,7 +101,7 @@ module.exports = function (app) {
     db.Cars.create({
       model: req.body.model,
       make: req.body.make,
-      year: req.body.year,
+      make: req.body.make,
       mileage: req.body.mileage,
       type: req.body.type,
       color: req.body.color,
