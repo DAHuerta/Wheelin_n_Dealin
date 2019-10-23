@@ -71,28 +71,8 @@ $(document).ready(function () {
       // image from image input
     };
     console.log(searchCar.model)
-    // var queryURL = "/inventory/" + searchCar.model
-    // // send an AJAX POST-request with jQuery
-    // $.get(queryURL)
-    //   // on success, run this callback
-    //   .then(function (data) {
-    //     // log the data we found
-    //     console.log(data)
-    //     // $(".card-header").append(data)
-    //     // tell the user we're adding a character with an alert window
-    //     alert("Searching for car...");
-    //     // res.render("inventory", data)
-    //   });
 
-    // // empty each input box by replacing the value with an empty string
-    // $("#model-search").val("");
-    // $("#make-search").val("");
-    // $("#year-search").val("");
-    // $("#mileage-search").val("");
-    // $("#type-search").val("");
-    // $("#color-search").val("");
-    // $("#price-search").val("");
-    location.href=`/inventory/search/`
+    location.href=`/inventory/search?model=${searchCar.model}&make=&${searchCar.make}`
   });
 
 });

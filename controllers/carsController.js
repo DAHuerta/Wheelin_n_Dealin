@@ -75,11 +75,8 @@ module.exports = function (app) {
   app.get("/inventory/search/", function (req, res) {
     var filters = {};
     // destructuring the req.query object into individual variable names for ease of access
-    // var { make, model, color, mileage } = req.query;
-    var make = req.query.make
-    var model = req.query.model
+    var { make, model, color, type, year } = req.query;
     
-
     // only include make in 'where' if user provides it!
     if (make) {
       filters.make = make;
@@ -89,20 +86,20 @@ module.exports = function (app) {
       filters.model = model;
     };
 
-    // if (color) {
-    //   filters.color = color;
-    // };
+    if (color) {
+      filters.color = color;
+    }
 
-    // if (mileage) {
-    //   filters.mileage = mileage;
-    // };
+    if (type) {
+      filters.type = type;
+    }
 
-    console.log(model)
+    if (year) {
+      filters.year = year;
+    }
 
     db.Cars.findAll({
-      where: {
-        make: req.query.make
-      }
+      where: filters
     }).then(function (carsearch) {
       var searchOb = {
         cars: carsearch
@@ -110,39 +107,6 @@ module.exports = function (app) {
       res.render("searchresults", searchOb)
     })
   });
-
-  //====
-  // empty object of filters -- we'll add key/val pairs here only if the user supplied values in the form 
-  // var filters = {};
-
-  // // destructuring the req.query object into individual variable names for ease of access
-  // var { make, model, color, etc } = req.query;
-
-  // // only include make in 'where' if user provides it!
-  // if (make) {
-  //   filters.make = make;
-  // }
-
-  // if (model) {
-  //   filters.model = model;
-  // }
-
-  // if (color) {
-  //   filters.color = color;
-  // }
-
-  // // is mileage special? because it's a range??? look into Sequelize ranges, maybe
-  // if (mileage) {
-  //   filters.mileage = mileage;
-  // }
-
-  // db.Car.findAll({
-  //   where: filters // feeding in an object of user-specified filters
-  // }).then(function (cars) {
-  //   res.render("templateName", dataObjName);
-  // })
-  // //=====
-
 
   // POST route for saving a new todo
   app.post("/api/newcars", function (req, res) {
