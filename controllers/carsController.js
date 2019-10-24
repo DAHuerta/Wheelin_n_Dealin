@@ -93,8 +93,6 @@ app.get("/vehicle_search", function(req, res) {
     res.render("search", { layout: "main.handlebars" })
 });
 
-<<<<<<< HEAD
-=======
 });
 
 // app.get("/login/signup", function (req, res) {
@@ -119,7 +117,6 @@ app.get("/vehicle_search", function(req, res) {
 //     // res.render("secret", secretOb);
 //   });
 // });
->>>>>>> 2feb4f203c6c3c14bd6c778ebd1f0f4e2134f77c
 
 app.get("/vehicle_search", function(req, res) {
     res.render("search", { layout: "main.handlebars" })
