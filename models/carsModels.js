@@ -30,6 +30,15 @@ module.exports = function (sequelize, DataTypes) {
     },
     hidden: {
       type: DataTypes.BOOLEAN, defaultValue: false
+    },
+    auction: {
+    type: DataTypes.BOOLEAN, defaultValue: false
+    },
+    bid: {
+    type: DataTypes.INTEGER, defaultValue: 0
+    },
+    currentBidder: {
+    type: DataTypes.STRING, allowNull: true
     }
   }, {
     timestamps: false
@@ -47,3 +56,4 @@ module.exports = function (sequelize, DataTypes) {
 
   return Cars;
 };
+
