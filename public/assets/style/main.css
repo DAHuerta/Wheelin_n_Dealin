@@ -1,5 +1,5 @@
 body {
-    background-image: url("https://assets.entrepreneur.com/images/misc/1552673477_Inside-Porsche-Palm-Springs.jpg?width=1000?width=1000");
+    background-image: url(https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1747&q=80);
     background-size: 100%;
     background-attachment: fixed;
     width: 80%;
@@ -9,11 +9,17 @@ body {
 }
 
 .jumbotron {
-    background: black;
     color: #e6e9ec;
     border-radius: 18px;
     text-align: center;
     border-style: solid;
+    font-size: 30px;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    background-image: url(../../imgs/checkerd.jpg);
+    -webkit-background-clip: text;
+    background-position: 0;
+    animation: back 20s linear;
 }
 
 footer {
@@ -24,6 +30,13 @@ footer {
     margin-bottom: 5%;
     border-style: solid;
     padding-bottom: 1rem;
+    font-size: 30px;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    background-image: url(../../imgs/checkerd.jpg);
+    -webkit-background-clip: text;
+    background-position: 0;
+    animation: back 20s linear;
 }
 
 .nav-bar {
@@ -43,9 +56,15 @@ img {
     border-width: 2px;
 }
 
-.car-show {
+.card-title {
+    text-align: center;
+    font-size: 40px;
+}
+
+.car-show,
+p {
     background: black;
-    color: #e6e9ec;
+    color: white;
     width: 80%;
     border-radius: 18px;
     margin-left: 10%;
@@ -53,6 +72,13 @@ img {
     font-size: 28px;
     border-style: solid;
     padding-top: 1rem;
+    font-size: 30px;
+    color: transparent;
+    -webkit-text-stroke: 1px whitesmoke;
+    background-image: url(../../imgs/checkerd.jpg);
+    -webkit-background-clip: text;
+    background-position: 0;
+    animation: back 20s linear;
 }
 
 .car-break {
@@ -72,7 +98,8 @@ img {
     margin-top: 3rem;
 }
 
-.secret-intro {
+.secret-intro,
+{
     background: black;
     color: #e6e9ec;
     text-align: center;
@@ -88,9 +115,17 @@ img {
     padding: 1rem;
     border-style: solid;
     margin-bottom: 5%;
+    font-size: 20px;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    background-image: url(../../imgs/checkerd.jpg);
+    -webkit-background-clip: text;
+    background-position: 0;
+    animation: back 20s linear;
 }
 
-.body-inventory {
+.body-inv,
+{
     background: #e6e9ec;
     border-radius: 18px;
     padding: 1rem;
@@ -98,6 +133,25 @@ img {
     margin-bottom: 5%;
     width: 90%;
     margin-left: 5%;
+    text-size: 40px;
+    font-size: 30px;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    background-image: url(../../imgs/checkerd.jpg);
+    -webkit-background-clip: text;
+    background-position: 0;
+    animation: back 20s linear;
+}
+
+.inv {
+    background: black;
+    color: white;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    border-radius: 18px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .body-deals {
@@ -113,12 +167,24 @@ img {
     margin-top: 0;
 }
 
-.profile-page {
+.profile-page,
+{
     background: white;
     margin-bottom: 5%;
     padding: 2rem;
     border-radius: 18px;
     border-style: solid;
+}
+
+.inv,
+{
+    font-size: 30px;
+    color: transparent;
+    -webkit-text-stroke: 1px gold;
+    background-image: url(../../imgs/checkerd.jpg);
+    -webkit-background-clip: text;
+    background-position: 0;
+    animation: back 20s linear;
 }
 
 .btn-light {
@@ -128,8 +194,13 @@ img {
 }
 
 .card {
-    color: black;
-    border-radius: 18px;
+    font-size: 30px;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    background-image: url(../../imgs/checkerd.jpg);
+    -webkit-background-clip: text;
+    background-position: 0;
+    animation: back 20s linear;
 }
 
 #auction-frame {
@@ -140,4 +211,60 @@ img {
     padding: 2rem;
     font-size: 24px;
     margin-bottom: 5%;
+    font-size: 30px;
+    color: transparent;
+    -webkit-text-stroke: 1px gold;
+    background-image: url(../../imgs/checkerd.jpg);
+    -webkit-background-clip: text;
+    background-position: 0;
+    animation: back 20s linear;
+}
+
+@keyframes back {
+    100% {
+        background-position: 2000px 0;
+    }
+}
+
+#search-btn,
+b,
+label {
+    font-size: 30px;
+    color: transparent;
+    -webkit-text-stroke: 1px royalblue;
+    background-image: url(../../imgs/checkerd.jpg);
+    -webkit-background-clip: text;
+    background-position: 0;
+    animation: back 20s linear;
+}
+
+#card-header {
+    font-size: 30px;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    background-image: url(../../imgs/checkerd.jpg);
+    -webkit-background-clip: text;
+    background-position: 0;
+    animation: back 20s linear;
+}
+
+#login-btn,
+.btn-secondary {
+    font-size: 30px;
+    color: transparent;
+    -webkit-text-stroke: 1px azure;
+    background-image: url(../../imgs/checkerd.jpg);
+    -webkit-background-clip: text;
+    background-position: 0;
+    animation: back 20s linear;
+}
+
+.search-body {
+    font-size: 30px;
+    color: transparent;
+    -webkit-text-stroke: 1px royalblue;
+    background-image: url(../../imgs/checkerd.jpg);
+    -webkit-background-clip: text;
+    background-position: 0;
+    animation: back 20s linear;
 }
