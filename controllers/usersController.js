@@ -3,7 +3,6 @@ var db = require("../models");
 // Routes =============================================================
 module.exports = function (app) {
 
-
   //link up to the new user signup page
   app.get('/signup', function (req, res) {
     res.render('notmember', { layout: 'main.handlebars' });

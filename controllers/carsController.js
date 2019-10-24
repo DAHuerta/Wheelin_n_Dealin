@@ -282,8 +282,6 @@ module.exports = function (app) {
 
       });
 
-
-
       //DELETE car from user profile page:
       app.delete("/api/car/delete/:id", function (req, res) {
         db.Cars.destroy({
@@ -294,8 +292,6 @@ module.exports = function (app) {
       })
     })
   })
-};
-
 
 app.get("/auction", function (req, res) {
   db.Cars.findAll({}).then(function (dbCars) {
@@ -381,4 +377,4 @@ app.delete("/api/car/delete/:id", function (req, res) {
     res.json(data)
   })
 })
-
+}
