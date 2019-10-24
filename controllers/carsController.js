@@ -11,6 +11,16 @@ var db = require("../models");
 
 // Routes =============================================================
 module.exports = function (app) {
+    // app.get("/", function (req, res) {
+    //   // findAll returns all entries for a table when used with no options
+    //   db.Cars.findAll({}).then(function (dbCars) {
+    //     // We have access to the cars as an argument inside of the callback function
+    //     var carOb = {
+    //       cars: dbCars.slice(0, 4)
+    //     }
+    //     res.render("index", carOb);
+    //   })
+    // })
 
   //index page:
   app.get('/', function (req, res) {
@@ -51,7 +61,13 @@ module.exports = function (app) {
 
     db.Cars.findAll({}).then(function (dbCars) {
       // console.log(dbCars)
+      // We have access to the cars as an argument inside of the callback function
+      var dbCars = {
+        cars: dbCars
+        // res.json(dbCars)
+      }
       res.render("profile2", dbCars);
+      // res.render("index", dbCars);
     });
   });
 
@@ -69,7 +85,12 @@ module.exports = function (app) {
 
     db.Cars.findAll({}).then(function (dbCars) {
       // console.log(dbCars)
+      // We have access to the cars as an argument inside of the callback function
+      var secretOb = {
+        cars: dbCars
+      }
       res.render("main", dbCars);
+      // res.render("secret", secretOb);
     });
   });
 
@@ -134,7 +155,54 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/auction", function(req, res) {
+    db.Cars.findAll({}).then(function(dbCars) {
+      var dbCars = {
+        cars: dbCars
+      }
+      console.log(dbCars)
+      // res.json(dbCars)
+      res.render("auction", dbCars);
+    });
+  });
+  app.put("/api/auction/update/:id", function (req, res) {
+    db.Cars.update({
+      bid: req.body.bid,
+      currentBidder: req.body.currentBidder
+    }, {
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function (dbCars) {
+        res.json(dbCars);
+      });
+  });
+  
+  app.get("/api/makeauction/:id", function(req, res){
+    db.Cars.update({ auction: true}, {
+      where: {
+        id: req.params.id
+      }
+    })
+  })
 
+  app.put("/api/auction", function(req,res) {
+
+    db.Cars.update({
+      bid: req.body.bid,
+      currentBidder: req.body.currentBidder
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function (data) {
+      console.log(data)
+      res.render("auction", data);
+    });
+
+  });
+  
   // POST route for saving a new car
   app.post("/api/newcars", function (req, res) {
     // create takes an argument of an object describing the item we want to insert
@@ -151,26 +219,25 @@ module.exports = function (app) {
       image: req.body.image,
       hidden: req.body.hidden,
       UserId: req.body.UserId
-
+      
     }).then(function (dbCars) {
       // We have access to the new todo as an argument inside of the callback function
       res.json(dbCars);
     }).catch(function (err) {
       // console.log(err.message)
       res.send(err.message)
-
+      
     });
 
-
-
+  });
+    
     //DELETE car from user profile page:
-    app.delete("/api/car/delete/:id", function (req, res) {
-      db.Cars.destroy({
-        where: { id: req.params.id }
-      }).then(function (data) {
-        res.json(data)
-      })
+  app.delete("/api/car/delete/:id", function (req, res) {
+    db.Cars.destroy({
+      where: { id: req.params.id }
+    }).then(function (data) {
+      res.json(data)
     })
   })
-}
 
+};
