@@ -51,7 +51,7 @@ module.exports = function (app) {
       // var dbCars = {
       //   cars: dbCars
       // }
-      console.log(dbCars)
+      // console.log(dbCars)
       // res.json(dbCars)
       res.render("profile", dbCars);
     });
@@ -69,23 +69,22 @@ module.exports = function (app) {
   app.get("/login/profile", function (req, res) {
 
     db.Cars.findAll({}).then(function (dbCars) {
+      // console.log(dbCars)
       // We have access to the cars as an argument inside of the callback function
       var dbCars = {
         cars: dbCars
+        // res.json(dbCars)
       }
-
       res.render("profile2", dbCars);
-      // res.json(dbCars)
-    })
-    //   res.render("index", dbCars);
-    // });
+      // res.render("index", dbCars);
+    });
   });
 
   app.get("/login/signup", function (req, res) {
 
     db.Cars.findAll({}).then(function (dbCars) {
 
-      console.log(dbCars)
+      // console.log(dbCars)
 
       res.render("signup", dbCars);
     });
@@ -94,11 +93,13 @@ module.exports = function (app) {
   app.get("/signup", function (req, res) {
 
     db.Cars.findAll({}).then(function (dbCars) {
+      // console.log(dbCars)
       // We have access to the cars as an argument inside of the callback function
       var secretOb = {
         cars: dbCars
       }
-      res.render("secret", secretOb);
+      res.render("main", dbCars);
+      // res.render("secret", secretOb);
     });
   });
 
@@ -135,6 +136,19 @@ module.exports = function (app) {
 
   // });
 
+  // DELETE route for deleting cars. We can get the id of the todo to be deleted
+  // from req.params.id
+  app.delete("/api/cars/:id", function (req, res) {
+    // Destroy takes in one argument: a "where object describing the cars we want to destroy
+    db.Cars.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function (dbCars) {
+        res.json(dbCars);
+      });
+  })
   app.get("/inventory/search/", function (req, res) {
     var filters = {};
     // destructuring the req.query object into individual variable names for ease of access
@@ -211,8 +225,18 @@ module.exports = function (app) {
         .then(function (dbCars) {
           res.json(dbCars);
         });
-
-    });
+    })
+    app.get("/carma_sutra", function (req, res) {
+      // findAll returns all entries for a table when used with no options
+      db.Cars.findAll({}).then(function (dbCars) {
+        // We have access to the cars as an argument inside of the callback function
+        var secretOb = {
+          cars: dbCars
+        }
+        // console.log(secretOb)
+        res.render("secret", secretOb);
+      });
+    })
     // PUT route for updating cars. We can get the updated todo data from req.body
     app.put("/api/cars/update/:id", function (req, res) {
       // Update takes in two arguments, an object describing the properties we want to update,
@@ -293,88 +317,92 @@ module.exports = function (app) {
     })
   })
 
-app.get("/auction", function (req, res) {
-  db.Cars.findAll({}).then(function (dbCars) {
-    var dbCars = {
-      cars: dbCars
-    }
-    console.log(dbCars)
-    // res.json(dbCars)
-    res.render("auction", dbCars);
-  });
-});
-app.put("/api/auction/update/:id", function (req, res) {
-  db.Cars.update({
-    bid: req.body.bid,
-    currentBidder: req.body.currentBidder
-  }, {
-    where: {
-      id: req.params.id
-    }
-  })
-    .then(function (dbCars) {
-      res.json(dbCars);
+  app.get("/auction", function (req, res) {
+    db.Cars.findAll({}).then(function (dbCars) {
+      var dbCars = {
+        cars: dbCars
+      }
+      console.log(dbCars)
+      // res.json(dbCars)
+      res.render("auction", dbCars);
     });
-});
+  });
+  app.put("/api/auction/update/:id", function (req, res) {
+    db.Cars.update({
+      bid: req.body.bid,
+      currentBidder: req.body.currentBidder
+    }, {
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function (dbCars) {
+        res.json(dbCars);
+      }).catch(function (err) {
+        // console.log(err.message)
+        res.send(err.message)
 
-app.get("/api/makeauction/:id", function (req, res) {
-  db.Cars.update({ auction: true }, {
-    where: {
-      id: req.params.id
-    }
-  })
-})
-
-app.put("/api/auction", function (req, res) {
-
-  db.Cars.update({
-    bid: req.body.bid,
-    currentBidder: req.body.currentBidder
-  }, {
-    where: {
-      id: req.body.id
-    }
-  }).then(function (data) {
-    console.log(data)
-    res.render("auction", data);
+      });
   });
 
-});
+  app.get("/api/makeauction/:id", function (req, res) {
+    db.Cars.update({ auction: true }, {
+      where: {
+        id: req.params.id
+      }
+    })
+  })
 
-// POST route for saving a new car
-app.post("/api/newcars", function (req, res) {
-  // create takes an argument of an object describing the item we want to insert
-  // into our table. In this case we just we pass in an object with a text and
-  // complete property
-  db.Cars.create({
-    model: req.body.model,
-    make: req.body.make,
-    year: req.body.year,
-    mileage: req.body.mileage,
-    type: req.body.type,
-    color: req.body.color,
-    price: req.body.price,
-    image: req.body.image,
-    hidden: req.body.hidden,
-    UserId: req.body.UserId
+  app.put("/api/auction", function (req, res) {
 
-  }).then(function (dbCars) {
-    // We have access to the new todo as an argument inside of the callback function
-    res.json(dbCars);
-  }).catch(function (err) {
-    console.log(err.message)
-    res.send(err.message)
+    db.Cars.update({
+      bid: req.body.bid,
+      currentBidder: req.body.currentBidder
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function (data) {
+      console.log(data)
+      res.render("auction", data);
+    });
 
   });
 
-});
+  // POST route for saving a new car
+  app.post("/api/newcars", function (req, res) {
+    // create takes an argument of an object describing the item we want to insert
+    // into our table. In this case we just we pass in an object with a text and
+    // complete property
+    db.Cars.create({
+      model: req.body.model,
+      make: req.body.make,
+      year: req.body.year,
+      mileage: req.body.mileage,
+      type: req.body.type,
+      color: req.body.color,
+      price: req.body.price,
+      image: req.body.image,
+      hidden: req.body.hidden,
+      UserId: req.body.UserId
 
-//DELETE car from user profile page:
-app.delete("/api/car/delete/:id", function (req, res) {
-  db.Cars.destroy({
-    where: { id: req.params.id }
-  }).then(function (data) {
-    res.json(data)
+    }).then(function (dbCars) {
+      // We have access to the new todo as an argument inside of the callback function
+      res.json(dbCars);
+    }).catch(function (err) {
+      console.log(err.message)
+      res.send(err.message)
+
+    });
+
+  });
+
+  //DELETE car from user profile page:
+  app.delete("/api/car/delete/:id", function (req, res) {
+    db.Cars.destroy({
+      where: { id: req.params.id }
+    }).then(function (data) {
+      res.json(data)
+    })
   })
-})
 }
