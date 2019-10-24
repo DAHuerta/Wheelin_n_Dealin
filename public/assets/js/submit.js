@@ -179,80 +179,90 @@ $(document).ready(function () {
     console.log(password);
     console.log(rePassword);
 
-    if (password != rePassword) {
-      alert(`Password and repeat password does not match`);
-      location.reload();
+    function updateCars(cars) {
+        $.ajax({
+            method: "PUT",
+            url: "/api/cars",
+            data: cars
+        }).then(getTodos);
     }
+    //reroute to /post/:id when click on sell your car
+    $("#sell-car-btn").on("click", function() {
+            console.log(window.location.href.split("/:")[1])
+            var id = window.location.href.split("userprofile/")[1];
+            window.location = "/postcar/" + id;
+        })
 
-    var newUser = {
-      email: $("#email-signup")
-        .val()
-        .trim(),
-      password: $("#password-signup")
-        .val()
-        .trim()
-    };
-
-    $.post("/api/newuser", newUser).then(function (data) {
-      //redirect to user profile page after getting data back from controller
-      console.log(data);
-      if (data === "old") {
-        alert(`There is already a user with this email address`);
-        location.reload();
-      } else if (data === "new") {
-        alert(`User profile successfully created. Please login.`);
-        window.location = "/login";
-      }
+    //user sign up:
+    $("#signup-btn").on("click", function(event) {
+        event.preventDefault();
+        var password = $("#password-signup")
+            .val()
+            .trim();
+        var rePassword = $("#repeat-password-signup")
+            .val()
+            .trim();
+        console.log(password);
+        console.log(rePassword);
+        if (password != rePassword) {
+            alert(`Password and repeat password does not match`);
+            location.reload();
+        }
+        var newUser = {
+            email: $("#email-signup")
+                .val()
+                .trim(),
+            password: $("#password-signup")
+                .val()
+                .trim()
+        };
+        $.post("/api/newuser", newUser).then(function(data) {
+            //redirect to user profile page after getting data back from controller
+            console.log(data);
+            if (data === "old") {
+                alert(`There is already a user with this email address`);
+                location.reload();
+            } else if (data === "new") {
+                alert(`User profile successfully created. Please login.`);
+                window.location = "/login";
+            }
+        });
     });
-  });
-
-  //user login:
-  $("#login-btn").on("click", function (event) {
-    event.preventDefault();
-
-    var loginInfo = {
-      email: $("#email-login")
-        .val()
-        .trim(),
-      password: $("#password-login")
-        .val()
-        .trim()
-    };
-
-    $.post("/api/login", loginInfo).done(function (data) {
-      if (data === "notLogin") {
-        alert(`Incorrect username and password`);
-        location.reload();
-      } else {
-        // console.log(data.user_name)
-        alert(`welcome ${data.user_name}`);
-        window.location = `/userprofile/${data.id}`;
-        //redirect to profile page. look at burgerJS for hints
-      }
+    //user login:
+    $("#login-btn").on("click", function(event) {
+        event.preventDefault();
+        var loginInfo = {
+            email: $("#email-login")
+                .val()
+                .trim(),
+            password: $("#password-login")
+                .val()
+                .trim()
+        };
+        $.post("/api/login", loginInfo).done(function(data) {
+            if (data === "notLogin") {
+                alert(`Incorrect username and password`);
+                location.reload();
+            } else {
+                // console.log(data.user_name)
+                alert(`welcome ${data.user_name}`);
+                window.location = `/userprofile/${data.id}`;
+                //redirect to profile page. look at burgerJS for hints
+            }
+        });
     });
-  });
-
-  //delete button from user profile page:
-  $("#delete-button").on("click", function (event) {
-    event.preventDefault();
-    // var deleteCar = confirm("Are you sure?")
-
-    var carId = $(this).data("carid");
-
-    console.log($(this).data("carid"));
-    $.ajax({
-      method: "DELETE",
-      url: "/api/car/delete/" + carId
-    }).then(function (data) {
-      // console.log(data)
-      alert(`Car deleted`);
+    //delete button from user profile page:
+    $("#delete-button").on("click", function(event) {
+        event.preventDefault();
+        // var deleteCar = confirm("Are you sure?")
+        var carId = $(this).data("carid");
+        console.log($(this).data("carid"));
+        $.ajax({
+            method: "DELETE",
+            url: "/api/car/delete/" + carId
+        }).then(function(data) {
+            // console.log(data)
+            alert(`Car deleted`);
+        });
     });
-  });
 });
-//I don't like where this bracke ends
-
-// $.ajax({
-  //   method: "DELETE",
-//   url: "/api/authors/" + id
-// })
-//   .then(getAuthors)
