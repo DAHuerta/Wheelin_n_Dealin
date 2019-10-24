@@ -182,39 +182,39 @@ $(document).ready(function () {
   })
 
   //user sign up:
-  $("#signup-btn").on("click", function (event) {
-    event.preventDefault();
+  // $("#signup-btn").on("click", function (event) {
+  //   event.preventDefault();
 
-    var password = $("#password-signup").val().trim();
-    var rePassword = $("#repeat-password-signup").val().trim();
-    console.log(password);
-    console.log(rePassword);
+  //   var password = $("#password-signup").val().trim();
+  //   var rePassword = $("#repeat-password-signup").val().trim();
+  //   console.log(password);
+  //   console.log(rePassword);
 
-    if (password != rePassword) {
-      alert(`Password and repeat password does not match`)
-      location.reload()
-    }
-    $.post("/api/newcars", newCar)
-      // on success, run this callback
-      .then(function (data) {
-        // log the data we found
-        console.log(data);
-        // tell the user we're adding a character with an alert window
-        alert("Adding car...");
-        location.reload();
-      });
+  //   if (password != rePassword) {
+  //     alert(`Password and repeat password does not match`)
+  //     location.reload()
+  //   }
+  //   $.post("/api/newcars", newCar)
+  //     // on success, run this callback
+  //     .then(function (data) {
+  //       // log the data we found
+  //       console.log(data);
+  //       // tell the user we're adding a character with an alert window
+  //       alert("Adding car...");
+  //       location.reload();
+  //     });
 
-    // empty each input box by replacing the value with an empty string
-    $("#model").val("");
-    $("#make").val("");
-    $("#year").val("");
-    $("#mileage").val("");
-    $("#type").val("");
-    $("#color").val("");
-    $("#price").val("");
-    $("#image").val("");
-    $("#hidden").val("");
-  });
+  //   // empty each input box by replacing the value with an empty string
+  //   $("#model").val("");
+  //   $("#make").val("");
+  //   $("#year").val("");
+  //   $("#mileage").val("");
+  //   $("#type").val("");
+  //   $("#color").val("");
+  //   $("#price").val("");
+  //   $("#image").val("");
+  //   $("#hidden").val("");
+  // });
 
   //user sign up:
   $("#signup-btn").on("click", function (event) {
@@ -251,7 +251,7 @@ $(document).ready(function () {
         location.reload();
       } else if (data === "new") {
         alert(`User profile successfully created. Please login.`);
-        window.location = "/user/profile";
+        window.location = "/login";
       }
     });
   });
