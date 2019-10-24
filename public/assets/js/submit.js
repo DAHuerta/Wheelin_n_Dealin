@@ -268,9 +268,3 @@ $(document).ready(function() {
         });
     });
 });
-//I don't like where this bracke ends
-// $.ajax({
-//   method: "DELETE",
-//   url: "/api/authors/" + id
-// })
-//   .then(getAuthors)
