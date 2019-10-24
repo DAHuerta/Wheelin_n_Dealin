@@ -125,7 +125,7 @@ p {
 }
 
 .body-inv,
-.inv {
+{
     background: #e6e9ec;
     border-radius: 18px;
     padding: 1rem;
@@ -141,6 +141,17 @@ p {
     -webkit-background-clip: text;
     background-position: 0;
     animation: back 20s linear;
+}
+
+.inv {
+    background: black;
+    color: white;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    border-radius: 18px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .body-deals {
