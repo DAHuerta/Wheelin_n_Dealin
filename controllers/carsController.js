@@ -80,28 +80,28 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/login/signup", function (req, res) {
+  // app.get("/login/signup", function (req, res) {
 
-    db.Cars.findAll({}).then(function (dbCars) {
+  //   db.Cars.findAll({}).then(function (dbCars) {
 
-      // console.log(dbCars)
+  //     // console.log(dbCars)
 
-      res.render("signup", dbCars);
-    });
-  });
+  //     res.render("signup", dbCars);
+  //   });
+  // });
 
-  app.get("/signup", function (req, res) {
+  // app.get("/signup", function (req, res) {
 
-    db.Cars.findAll({}).then(function (dbCars) {
-      // console.log(dbCars)
-      // We have access to the cars as an argument inside of the callback function
-      var secretOb = {
-        cars: dbCars
-      }
-      res.render("main", dbCars);
-      // res.render("secret", secretOb);
-    });
-  });
+  //   db.Cars.findAll({}).then(function (dbCars) {
+  //     // console.log(dbCars)
+  //     // We have access to the cars as an argument inside of the callback function
+  //     var secretOb = {
+  //       cars: dbCars
+  //     }
+  //     res.render("main", dbCars);
+  //     // res.render("secret", secretOb);
+  //   });
+  // });
 
   app.get("/vehicle_search", function (req, res) {
     res.render("search", { layout: "main.handlebars" })
