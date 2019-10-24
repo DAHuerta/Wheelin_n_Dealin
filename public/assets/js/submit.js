@@ -6,22 +6,6 @@ $(document).ready(function () {
     console.log("secret menu");
   });
 
-  // $("#add-btn").on("click", function (event) {
-  //   event.preventDefault();
-  //   // make a newCharacter obj
-  //   var newCharacter = {
-  //     // model from model input
-  //     model: $("#model").val().trim(),
-  //     // make from make input
-  //     make: $("#make").val().trim(),
-  //     // year from year input
-  //     year: $("#year").val().trim(),
-  //     // mile from mileage input
-  //     mileage: $("#mileage").val().trim(),
-  //     // type from type input
-  //     type: $("#type").val().trim(),
-  //   }})
-
   $("#auctionId").on("click", function (event) {
     event.preventDefault();
     var currentBid = parseInt($("#currentBid").text());
@@ -181,40 +165,6 @@ $(document).ready(function () {
     window.location = "/postcar/" + id;
   })
 
-  //user sign up:
-  $("#signup-btn").on("click", function (event) {
-    event.preventDefault();
-
-    var password = $("#password-signup").val().trim();
-    var rePassword = $("#repeat-password-signup").val().trim();
-    console.log(password);
-    console.log(rePassword);
-
-    if (password != rePassword) {
-      alert(`Password and repeat password does not match`)
-      location.reload()
-    }
-    $.post("/api/newcars", newCar)
-      // on success, run this callback
-      .then(function (data) {
-        // log the data we found
-        console.log(data);
-        // tell the user we're adding a character with an alert window
-        alert("Adding car...");
-        location.reload();
-      });
-
-    // empty each input box by replacing the value with an empty string
-    $("#model").val("");
-    $("#make").val("");
-    $("#year").val("");
-    $("#mileage").val("");
-    $("#type").val("");
-    $("#color").val("");
-    $("#price").val("");
-    $("#image").val("");
-    $("#hidden").val("");
-  });
 
   //user sign up:
   $("#signup-btn").on("click", function (event) {
@@ -251,7 +201,7 @@ $(document).ready(function () {
         location.reload();
       } else if (data === "new") {
         alert(`User profile successfully created. Please login.`);
-        window.location = "/user/profile";
+        window.location = "/login";
       }
     });
   });
