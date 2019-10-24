@@ -1,7 +1,7 @@
 {
     "development": {
         "username": "root",
-        "password": "deadeye22",
+        "password": "Quattro_Quattro08",
         "database": "car_db",
         "host": "127.0.0.1",
         "dialect": "mysql",
@@ -22,6 +22,7 @@
         "database": "database_production",
         "host": "127.0.0.1",
         "dialect": "mysql",
-        "operatorsAliases": false
+        "operatorsAliases": false,
+        "use_env_variable":"JAWS_DB_URL"
     }
 }
