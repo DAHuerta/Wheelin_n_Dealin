@@ -1,7 +1,7 @@
 # Project_2_DU
 ==============================
 # Welcome to Wheelin' N Dealin'
-Welcome the last car buying experience you'll ever need to enjoy. Wheelin' N Dealin' is your one stop shop for the very best vehicles that are available in today's market. This application ties into a persistent database and provides user access to a wide variety of vehicles. To see our latest inventory, simply visit the link "Browse the Inventory Now".
+Welcome the last car buying experience you'll ever need to enjoy. Wheelin' N Dealin' is your one stop shop for the very best vehicles that are available in today's market. This application ties into a persistent database and provides user access to a wide variety of vehicles. To see our latest inventory, simply visit the link "Browse the Inventory Now". Visit our website at https://fathomless-oasis-54748.herokuapp.com.
 
 # Auction
 Registered users and guests have access to view the current auction we are hosting. Wheelin' N Dealin' post vehicles for sale, and visitors and users are invited to bid on these items while they are still being auctioned. If the bid is too low, the remaining highest bidder's information will remain, however if the users bid is the new highest bid, thier information will be displayed.
