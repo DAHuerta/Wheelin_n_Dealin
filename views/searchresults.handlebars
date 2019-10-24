@@ -1,0 +1,15 @@
+    <ul class="car-show">
+        <div>Wheelin' N Dealin' 2019 Inventory</div>
+        <p>Your Searched Vehicles are Below!</p>
+        <br>
+        {{#each cars}}
+        {{year}} {{make}} {{model}}<br>
+        {{color}} {{type}}<br>
+        Mileage: {{mileage}}<br>
+        Asking Price: ${{price}}<br>
+        <img src={{image}}><br>
+        <div class="car-break"></div>
+        {{/each}}
+    </ul>
+
+    <a href="/vehicle_search"><button id="search-again" class="btn btn-lg btn-light btn-block">Search Again</button></a>

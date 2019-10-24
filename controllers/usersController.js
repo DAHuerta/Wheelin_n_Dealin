@@ -1,15 +1,7 @@
-// *****************************************************************************
-// **** api-routes.js - this file offers a set of routes for displaying and
-// saving data to the db
-// ******************************************************************************
-// *** Dependencies
-
-// Requiring our models
 var db = require("../models");
 
 // Routes =============================================================
 module.exports = function (app) {
-
 
   //link up to the new user signup page
   app.get('/signup', function (req, res) {
@@ -19,7 +11,6 @@ module.exports = function (app) {
   app.get('/login', function (req, res) {
     res.render('profile', { layout: 'main.handlebars' });
   });
-
 
   //post route to confirm username have not been taken:
   app.post("/api/newuser", function (req, res) {
@@ -48,11 +39,6 @@ module.exports = function (app) {
     })
   })
 
-  //link up to the login page:
-  // app.get('/login', function (req, res) {
-  //   res.render('login', { layout: 'main.handlebars' });
-  // });
-
   //get route for checking if user exist:
   app.post("/api/login", function (req, res) {
     // findAll returns all entries for a table when used with no options
@@ -70,7 +56,6 @@ module.exports = function (app) {
     })
   })
 
-
   //get route for user profile page
   app.get("/userprofile/:id", function(req, res){
     db.Users.findOne({ 
@@ -87,20 +72,5 @@ module.exports = function (app) {
       res.render("profile2", userCar);
     })
   })
-
-    // // GET route for getting all of the cars
-    // app.get("/inventory", function (req, res) {
-    //   // findAll returns all entries for a table when used with no options
-    //   db.Cars.findAll({}).then(function (dbCars) {
-    //     // We have access to the cars as an argument inside of the callback function
-    //     var carOb = {
-    //       cars: dbCars
-    //     }
-    //     // console.log(carOb)
-    //     // res.json(dbCars)
-    //     res.render("inventory", carOb);
-  
-    //   });
-    // });
 };
 

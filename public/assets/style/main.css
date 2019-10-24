@@ -130,5 +130,14 @@ img {
 .card {
     color: black;
     border-radius: 18px;
-    ;
+}
+
+#auction-frame {
+    background: black;
+    color: white;
+    border-radius: 18px;
+    text-align: center;
+    padding: 2rem;
+    font-size: 24px;
+    margin-bottom: 5%;
 }
