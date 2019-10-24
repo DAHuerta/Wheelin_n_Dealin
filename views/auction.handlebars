@@ -1,6 +1,4 @@
-<ul>
-
-<li>
+<div id="auction-frame">
 	{{#each cars}}
     {{#if auction}}<br>
     Model: {{model}}<br>
@@ -8,11 +6,11 @@
     Year: {{year}}<br>
     Color: {{color}}<br>
     <img src={{image}}><br>
-    bid:
+    Highest Bid:
     <div id="currentBid">
-    {{bid}}<br>
+    ${{bid}}<br>
     </div>
-    currentBidder:
+    Highest Bidder:
     <div id="currentBidder">
     {{currentBidder}}<br>
     </div>
@@ -23,7 +21,4 @@
     </form>
     {{/if}}
     {{/each}}
-
-</li>
-
-</ul>
+</div>

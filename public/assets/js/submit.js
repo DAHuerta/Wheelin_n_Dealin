@@ -146,14 +146,10 @@ $(document).ready(function () {
       // year from year input
       year: $("#year-search").val().trim(),
       // mile from mileage input
-      mileage: $("#mileage-search").val().trim(),
-      // type from type input
       type: $("#type-search").val().trim(),
       // color from color input
       color: $("#color-search").val().trim(),
       // price from price input
-      price: $("#price-search").val().trim(),
-      // image from image input
     };
 
     location.href = `/inventory/search?model=${searchCar.model}&make=&${searchCar.make}&color=${searchCar.color}&type=${searchCar.type}&year=${searchCar.year}`
