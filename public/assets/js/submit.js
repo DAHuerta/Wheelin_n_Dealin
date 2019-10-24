@@ -1,3 +1,5 @@
+//This is an extra comment
+
 $(document).ready(function () {
 
   $("#secret-menu-btn").on("click", function () {
