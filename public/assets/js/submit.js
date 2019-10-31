@@ -8,16 +8,18 @@ $(document).ready(function () {
 
   $("#auctionId").on("click", function (event) {
     event.preventDefault();
-    var currentBid = parseInt($("#currentBid").text());
+    var currentBid = parseInt($("#currentBid").text().slice(6));
+    console.log("current bid:" + currentBid);
     var bid = parseInt(
       $("#bid")
         .val()
         .trim()
     );
+    console.log("bid: " + bid);
 
     var newBidder;
     if (bid > currentBid) {
-      console.log(bid);
+      console.log("bid" + bid);
       newBidder = {
         bid: bid,
         // hidden from hidden input. true of false
@@ -46,7 +48,7 @@ $(document).ready(function () {
 
   //reroute to /post/:id when click on sell your car
   $("#sell-car-btn").on("click", function () {
-    console.log(window.location.href.split("/:")[1]);
+    // console.log(window.location.href.split("/:")[1]);
     var id = window.location.href.split("userprofile/")[1];
     window.location = "/postcar/" + id;
   });

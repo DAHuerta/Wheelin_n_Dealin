@@ -315,41 +315,47 @@ module.exports = function (app) {
             res.render("auction", dbCars);
         });
     });
-    app.put("/api/auction/update/:id", function (req, res) {
-        db.Cars.update({
-            bid: req.body.bid,
-            currentBidder: req.body.currentBidder
-        }, {
-            where: {
-                id: req.params.id
-            }
-        })
-            .then(function (dbCars) {
-                res.json(dbCars);
-            }).catch(function (err) {
-                res.send(err.message)
-            });
-    });
-    app.get("/api/makeauction/:id", function (req, res) {
-        db.Cars.update({ auction: true }, {
-            where: {
-                id: req.params.id
-            }
-        })
+  // });
+  app.put("/api/auction/update/:id", function (req, res) {
+    db.Cars.update({
+      bid: parseInt(req.body.bid),
+      currentBidder: req.body.currentBidder
+    }, {
+      where: {
+        id: req.params.id
+      }
     })
-    app.put("/api/auction", function (req, res) {
-        db.Cars.update({
-            bid: req.body.bid,
-            currentBidder: req.body.currentBidder
-        }, {
-            where: {
-                id: req.body.id
-            }
-        }).then(function (data) {
-            // console.log(data)
-            res.render("auction", data);
-        });
+      .then(function (dbCars) {
+        res.json(dbCars);
+      }).catch(function (err) {
+        // console.log(err.message)
+        res.send(err.message)
+
+      });
+  });
+
+  app.get("/api/makeauction/:id", function (req, res) {
+    db.Cars.update({ auction: true }, {
+      where: {
+        id: req.params.id
+      }
+    })
+  })
+
+  app.put("/api/auction", function (req, res) {
+    console.log("req.body: " + req.body);
+    db.Cars.update({
+      bid: parseInt(req.body.bid),
+      currentBidder: req.body.currentBidder
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function (data) {
+      console.log(data)
+      res.render("auction", data);
     });
+  });
     // POST route for saving a new car
     app.post("/api/newcars", function (req, res) {
         // create takes an argument of an object describing the item we want to insert
@@ -382,4 +388,4 @@ module.exports = function (app) {
             res.json(data)
         })
     })
-}
+  }
