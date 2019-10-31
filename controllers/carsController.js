@@ -329,7 +329,7 @@ module.exports = function (app) {
   });
   app.put("/api/auction/update/:id", function (req, res) {
     db.Cars.update({
-      bid: req.body.bid,
+      bid: parseInt(req.body.bid),
       currentBidder: req.body.currentBidder
     }, {
       where: {
@@ -354,9 +354,9 @@ module.exports = function (app) {
   })
 
   app.put("/api/auction", function (req, res) {
-
+    console.log("req.body: " + req.body);
     db.Cars.update({
-      bid: req.body.bid,
+      bid: parseInt(req.body.bid),
       currentBidder: req.body.currentBidder
     }, {
       where: {
