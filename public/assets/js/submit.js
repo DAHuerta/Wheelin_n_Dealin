@@ -6,22 +6,6 @@ $(document).ready(function () {
     console.log("secret menu");
   });
 
-  // $("#add-btn").on("click", function (event) {
-  //   event.preventDefault();
-  //   // make a newCharacter obj
-  //   var newCharacter = {
-  //     // model from model input
-  //     model: $("#model").val().trim(),
-  //     // make from make input
-  //     make: $("#make").val().trim(),
-  //     // year from year input
-  //     year: $("#year").val().trim(),
-  //     // mile from mileage input
-  //     mileage: $("#mileage").val().trim(),
-  //     // type from type input
-  //     type: $("#type").val().trim(),
-  //   }})
-
   $("#auctionId").on("click", function (event) {
     event.preventDefault();
     var currentBid = parseInt($("#currentBid").text().slice(6));
@@ -168,13 +152,12 @@ $(document).ready(function () {
     console.log("secret menu")
   });
 
-  function updateCars(cars) {
-    $.ajax({
-      method: "PUT",
-      url: "/api/cars",
-      data: cars
-    }).then(getTodos);
-  }
+  //reroute to /post/:id when click on sell your car
+  $("#sell-car-btn").on("click", function () {
+    console.log(window.location.href.split("/:")[1])
+    var id = window.location.href.split("userprofile/")[1];
+    window.location = "/postcar/" + id;
+  })
 
   //reroute to /post/:id when click on sell your car
   $("#sell-car-btn").on("click", function () {
@@ -184,44 +167,8 @@ $(document).ready(function () {
   })
 
   //user sign up:
-  // $("#signup-btn").on("click", function (event) {
-  //   event.preventDefault();
-
-  //   var password = $("#password-signup").val().trim();
-  //   var rePassword = $("#repeat-password-signup").val().trim();
-  //   console.log(password);
-  //   console.log(rePassword);
-
-  //   if (password != rePassword) {
-  //     alert(`Password and repeat password does not match`)
-  //     location.reload()
-  //   }
-  //   $.post("/api/newcars", newCar)
-  //     // on success, run this callback
-  //     .then(function (data) {
-  //       // log the data we found
-  //       console.log(data);
-  //       // tell the user we're adding a character with an alert window
-  //       alert("Adding car...");
-  //       location.reload();
-  //     });
-
-  //   // empty each input box by replacing the value with an empty string
-  //   $("#model").val("");
-  //   $("#make").val("");
-  //   $("#year").val("");
-  //   $("#mileage").val("");
-  //   $("#type").val("");
-  //   $("#color").val("");
-  //   $("#price").val("");
-  //   $("#image").val("");
-  //   $("#hidden").val("");
-  // });
-
-  //user sign up:
   $("#signup-btn").on("click", function (event) {
     event.preventDefault();
-
     var password = $("#password-signup")
       .val()
       .trim();
@@ -230,12 +177,10 @@ $(document).ready(function () {
       .trim();
     console.log(password);
     console.log(rePassword);
-
     if (password != rePassword) {
       alert(`Password and repeat password does not match`);
       location.reload();
     }
-
     var newUser = {
       email: $("#email-signup")
         .val()
@@ -244,7 +189,6 @@ $(document).ready(function () {
         .val()
         .trim()
     };
-
     $.post("/api/newuser", newUser).then(function (data) {
       //redirect to user profile page after getting data back from controller
       console.log(data);
@@ -257,11 +201,9 @@ $(document).ready(function () {
       }
     });
   });
-
   //user login:
   $("#login-btn").on("click", function (event) {
     event.preventDefault();
-
     var loginInfo = {
       email: $("#email-login")
         .val()
@@ -270,7 +212,6 @@ $(document).ready(function () {
         .val()
         .trim()
     };
-
     $.post("/api/login", loginInfo).done(function (data) {
       if (data === "notLogin") {
         alert(`Incorrect username and password`);
@@ -283,14 +224,11 @@ $(document).ready(function () {
       }
     });
   });
-
   //delete button from user profile page:
   $("#delete-button").on("click", function (event) {
     event.preventDefault();
     // var deleteCar = confirm("Are you sure?")
-
     var carId = $(this).data("carid");
-
     console.log($(this).data("carid"));
     $.ajax({
       method: "DELETE",
@@ -300,11 +238,4 @@ $(document).ready(function () {
       alert(`Car deleted`);
     });
   });
-});
-//I don't like where this bracke ends
-
-// $.ajax({
-  //   method: "DELETE",
-//   url: "/api/authors/" + id
-// })
-//   .then(getAuthors)
+})
